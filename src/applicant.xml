@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <package name="applicant" namespace="/applicant" extends="struts-securityaddon-withauth">
+  
+  		<!-- Applicant Account Actions [Start]-->
+  		<action name="getCollegeSVG" class="edu.action.application.Application" method="getCollegeSVG">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+  		
+  		<action name="getColleges" class="edu.action.application.Application" method="getColleges">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+  		
+  		
+		<!-- 
+	    <action name="applicantInfo" class="edu.action.applicant.Applicant" method="applicantInfo">
+			<result name="success">/WEB-INF/jsp/Applicant/ApplicantHome.jsp</result>   	
+			<result name="otp_form">/WEB-INF/jsp/Applicant/OtpForm.jsp</result>	
+		</action>
+		 -->
+		<action name="applicantInfoReadOnly" class="edu.action.applicant.Applicant" method="applicantInfoReadOnly">
+			<result name="success">/WEB-INF/jsp/Applicant/ApplicantHomeReadOnly.jsp</result>   		
+		</action>
+	    
+
+		<action name="choiceList" class="edu.action.applicant.Applicant" method="choiceList">
+			<result name="success">/WEB-INF/jsp/Applicant/ChoiceList.jsp</result>			
+			<result type="redirect" name="read_only">choiceListReadOnly.action</result>
+			<result name="otp_form">/WEB-INF/jsp/Applicant/OtpForm_Rel.jsp</result>
+			   		
+		</action>
+		
+		<action name="choiceListReadOnly" class="edu.action.applicant.Applicant" method="choiceListReadOnly">
+			<result name="success">/WEB-INF/jsp/Applicant/ChoiceListReadOnly.jsp</result>   		
+		</action>
+		
+	    <action name="updateChoiceList" class="edu.action.applicant.Applicant" method="updateChoiceList">
+			<result type="stream">
+				<param name="contentType">json</param>
+				<param name="inputName">inputStream</param>
+			</result>   		
+		</action>
+		<action name="updateEducationQuotaInfo" class="edu.action.applicant.Applicant" method="updateEducationQuotaInfo">
+			<result type="stream">
+				<param name="contentType">json</param>
+				<param name="inputName">inputStream</param>
+			</result>   		
+		</action>
+		<!-- 
+		<action name="updateReleaseList" class="edu.action.applicant.Applicant" method="updateReleaseList">
+			<result type="stream">
+				<param name="contentType">json</param>
+				<param name="inputName">inputStream</param>
+			</result>   		
+		</action>
+		 -->
+		
+		<action name="otpForm">
+			<result name="otp_form">/WEB-INF/jsp/Applicant/OtpForm.jsp</result>
+		</action>
+		
+	    <action name="choiceListReport" class="edu.action.applicant.Applicant" method="choiceListReport">
+	      	<result name="success">/WEB-INF/jsp/Applicant/HtmlReport.jsp</result>
+	    </action>
+		
+		<action name="sendNewOtp" class="edu.action.applicant.Applicant" method="sendNewOtp">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+	    
+	    <action name="validateOtp" class="edu.action.applicant.Applicant" method="validateOtp">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+	    <action name="validateOtpRl" class="edu.action.applicant.Applicant" method="validateOtpRl">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+	    <!-- 
+	    <action name="updateQuotaInfo" class="edu.action.applicant.Applicant" method="updateQuotaInfo">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+	     -->
+	    <action name="ApplicantViewResult" class="edu.action.applicant.Applicant" method="ApplicantViewResult">
+	      	<result name="success">/WEB-INF/jsp/Applicant/Result.jsp</result>
+	    </action>
+	     
+	     <action name="migrationNew" class="edu.action.applicant.Applicant" method="migrationNew">
+	      	<result name="success">/WEB-INF/jsp/Applicant/migration/MigrationNew.jsp</result>
+	      	<result name="basicInfo"  type="redirectAction">
+				<param name="namespace">applicant</param>
+				<param name="actionName">applicantInfoReadOnly</param> 
+				<param name="actionName">applicantInfoReadOnly.action</param>
+			</result>
+	    </action>
+	    <action name="submitMigrationNew" class="edu.action.applicant.Applicant" method="submitMigrationNew">
+	      	<result name="success">/WEB-INF/jsp/Applicant/migration/submitMigrationMessageNew.jsp</result>
+	    </action>
+	    
+	    
+	    
+	    <action name="migrationForm" class="edu.action.applicant.Applicant" method="autoMigrationForm">
+	      	<result name="success">/WEB-INF/jsp/Applicant/MigrationHome.jsp</result>
+	      	<result name="otp_form">/WEB-INF/jsp/Applicant/OtpForm.jsp</result>
+	    </action>
+		<action name="submitMigrationForm" class="edu.action.applicant.Applicant" method="updateAutoMigration">
+	      	<result name="success">/WEB-INF/jsp/Applicant/Result.jsp</result>
+	    </action>
+	    
+	    
+	    <action name="releaseSlipReadOnly" class="edu.action.applicant.Applicant" method="releaseSlipReadOnly">
+	      	<result name="success">/WEB-INF/jsp/Applicant/ReleaseSlip/ReleaseSlipReadOnly.jsp</result>
+	      	<result name="otp_form">/WEB-INF/jsp/Applicant/OtpForm_Rel.jsp</result>
+	      	<result name="invalid">/WEB-INF/jsp/Applicant/ReleaseSlip/Invalid.jsp</result>
+	    </action>	    
+	
+	    <action name="releaseSlip" class="edu.action.applicant.Applicant" method="releaseSlip">
+	      	<result name="success">/WEB-INF/jsp/Applicant/ReleaseSlip/ReleaseSlip.jsp</result>
+	      	<result name="otp_form">/WEB-INF/jsp/Applicant/OtpForm.jsp</result>
+	      	<result name="invalid">/WEB-INF/jsp/Applicant/ReleaseSlip/Invalid.jsp</result>
+	    </action>
+	  
+	     <action name="releaseSlipReport" class="edu.action.applicant.Applicant" method="releaseSlipReport">
+	      	<result name="success">/WEB-INF/jsp/Applicant/ReleaseSlip/HtmlReport.jsp</result>
+	      	<result name="invalid">/WEB-INF/jsp/Applicant/ReleaseSlip/Invalid.jsp</result>
+	    </action>
+	    <action name="applicantPhotoChangeView" class="edu.action.applicant.Applicant" method="applicantPhotoChangeView">
+			<result name="success">/WEB-INF/jsp/Applicant/ApplicantPhotoChange.jsp</result>   	
+		</action>
+	    <action name="applicantPhotoValidation" class="edu.action.applicant.Applicant" method="photoValidation">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+		</action>
+		
+		<action name="changePhoto" class="edu.action.applicant.Applicant" method="changePhoto">
+	      	<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+		</action>
+		<!-- Applicant Account Actions [End]-->
+    
+  </package>
+</struts>

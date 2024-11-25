@@ -1,0 +1,11 @@
+dir *.java /s /b > FilesList.txt
+"C:\Program Files\Java\jdk1.7.0_21\bin\javac" @FilesList.txt -d .
+"C:\Program Files\Java\jdk1.7.0_21\bin\jar" cmf manifest.txt cacheServer.jar @ClassList.txt
+
+
+
+"C:\Program Files\Java\jdk1.7.0_21\bin\rmiregistry" 2010
+"C:\Program Files\Java\jdk1.7.0_21\bin\java" -jar cacheServer.jar 10
+
+
+

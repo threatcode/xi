@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Online Application System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<!-- <script src="web.js"></script> -->
+<style>
+fieldset {
+	vertical-align: baseline;
+	width: 679px;
+	padding-right: 5px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="header">
+			<div style="float: left;width: 85%;">
+				 <h1><font color="white">Ministry of Education</font></h1>
+			<h2 style="font-size: 17px">Dhaka Rajshahi Comilla Jessore Chittagong Barisal Sylhet Dinajpur Bangladesh Madrasah and Technical Education Board</h2>
+			</div>
+			<div style="float: left;width: 10%;">
+				<img src="bd.png" />
+			</div>
+			
+		</div>
+		<div id="nav" style="margin-bottom: 25px;">
+			<a href="javascript:shoHideDivs('home')">Home</a>
+			<a href="#">Deadlines</a>
+			<a href="javascript:shoHideDivs('howtopay')">How to Pay</a>
+			<a href="http://app.xiclassadmission.gov.bd/board/login">Applicant's Login</a>
+			<a href="javascript:shoHideDivs('helpline')">Help line</a>
+            <a href="javascript:shoHideDivs('sscresult')">Results SSC</a>
+			<a href="javascript:shoHideDivs('downloads')">Download Instructions</a>
+<!--			<a href="javascript:shoHideDivs('downloadeiinwithminimumGPA')"> Colleges with EIIN</a> -->
+			<a href="http://xiclassadmission.gov.bd/board/va">Verify Application</a>
+			<a href="javascript:shoHideDivs('notices')"> Notices</a>
+			<div style="margin-top: 10px;width: 150px;">
+			
+				<div>
+					<input type="button" class="myButton" value="Board Section" style="width: 155px;" onclick="window.location='http://app.xiclassadmission.gov.bd/board/login.action'"/>
+				</div>
+				<div style="margin-top: 5px;">
+					<input type="button" class="myButton" value="College Section" style="width: 155px;" onclick="window.location='http://app.xiclassadmission.gov.bd/board/login.action'"/>
+				</div>
+				<!--
+				<div style="margin-top: 5px;">				
+					<input type="button" class="myButton1" value="Application Section" style="width: 155px;" onclick="window.location='http://app.xiclassadmission.gov.bd/board/application/applicationForm.action'"/>
+				</div>
+				-->
+				<div style="margin-top: 5px;">
+					<input type="button" class="myButton" value="Password Recovery" style="width: 155px;" onclick="window.location='http://app.xiclassadmission.gov.bd/board/pinretrival.action'" />
+				</div>
+<!-- 				
+				<div style="margin-top: 5px;">				
+					<input type="button" class="myButton1" value="Applicant's Feedback" style="width: 155px;" onclick="window.location='http://app.xiclassadmission.gov.bd/board/getfeedback.action'"/>
+				</div>
+-->
+				<div style="margin-top: 5px;">				
+					<input type="button" class="myButton1" value="Admission Procedure" style="width: 155px;" onclick="window.location='http://app.xiclassadmission.gov.bd/Admission_Procedure.pdf'"/>
+				</div>
+				
+			</div>
+		</div>
+		<center>
+		<div id="content">
+		
+        	<div id="home" style="display: block;">
+
+            	<div style="color: red; font-size: 18px;">
+					<marquee scrollamount="4">&#x9E7;&#x9E7;&#x2D;&#x9E6;&#x9ED;&#x2D;&#x9E8;&#x9E6;&#x9E7;&#x9EB;&#x20;&#x9A4;&#x9BE;&#x9B0;&#x9BF;&#x996;&#x9C7;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x995;&#x9BE;&#x9B6;&#x9BF;&#x9A4;&#x20;&#x9E9;&#x9DF;&#x20;&#x9AE;&#x9C7;&#x9A7;&#x9BE;&#x20;&#x9A4;&#x9BE;&#x9B2;&#x9BF;&#x995;&#x9BE;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x995;&#x9BE;&#x9B6;&#x9C7;&#x9B0;&#x20;&#x9AA;&#x9B0;&#x20;&#x2013;&#x20;&#x986;&#x99C;&#x20;&#x9A5;&#x9C7;&#x995;&#x9C7;&#x20;&#x986;&#x997;&#x9BE;&#x9AE;&#x9C0;&#x20;&#x9E7;&#x9EA;&#x2D;&#x9E6;&#x9ED;&#x2D;&#x9E8;&#x9E6;&#x9E7;&#x9EB;&#x20;&#x9AA;&#x9B0;&#x9CD;&#x9AF;&#x9A8;&#x9CD;&#x9A4;&#x20;&#x9AC;&#x9BF;&#x9B2;&#x9AE;&#x9CD;&#x9AC;&#x20;&#x9AB;&#x9BF;&#x20;&#x9AC;&#x9CD;&#x9AF;&#x9BE;&#x9A4;&#x9BF;&#x9A4;&#x20;&#x9B6;&#x9BF;&#x995;&#x9CD;&#x9B7;&#x9BE;&#x9B0;&#x9CD;&#x9A5;&#x9C0;&#x9B0;&#x9BE;&#x20;&#x9AD;&#x9B0;&#x9CD;&#x9A4;&#x9BF;&#x20;&#x9B9;&#x9A4;&#x9C7;&#x20;&#x9AA;&#x9BE;&#x9B0;&#x9AC;&#x9C7;&#x964;</marquee>   
+				</div>
+            	<div style="width:100%; margin-top: 20px;">
+                	<div style="float:left; padding-left: 30px;"><input type="button" class="myButton2" value="Notice for Applicants" style="width: 300px; height: 60px; font-size: 26px;" onclick="applicantNotice()"/></div>
+                    <div style="float:right; padding-right: 30px;"><input type="button" class="myButton2" value="Notice for Colleges" style="width: 270px; height: 60px; font-size: 26px;" onclick="collegeNotice()"/></div>
+                </div>
+                <div style="height:160px;padding-top:80px;font-size:2em;font-weight:bold;">
+                    Smart Admission System
+                    <div style="font-size: 30px;color: #347C17">
+                     For<br/>	
+                    XI CLASS ADMISSION <br><div style="font-size: 25px;color: #347C17">(SESSION 2015 - 2016)</div>
+                    </div>
+                </div>
+                <div>
+                <!-- 
+                <div style="width: 50%; float: left;">
+                <a href="http://app.xiclassadmission.gov.bd/board/application/applicationForm" style="text-decoration: none;color: black;">    
+                <img src="apply.gif"  border="2"  style="border:2px solid green;"/>
+                </a>
+                </div>
+                 -->
+            	<div style="width:100%; margin-top: 20px;">
+ 
+                	<div style="float:left; padding-left: 30px;"><input type="button" class="myButton2" value="Individual Result" style="width: 275px; height: 60px; font-size: 26px;color: blue" onclick="IndView()"/></div>
+
+<!-- 
+                	<div style="padding-right: 30px; width: 100%;"><input type="button" class="myButton2" value="Apply For Release Slip" style="width: 320px; height: 60px; font-size: 26px;color: blue" onclick="InstView()"/> &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <input type="button" class="myButton2" value="Board Wise Seat Info" style="width: 320px; height: 60px; font-size: 26px;color: blue" onclick="shoHideDivs('downloadBoardWiseSeat')"/></div>
+--> 	 
+                    <div style="float:right; padding-right: 30px;"><input type="button" class="myButton2" value="Institutional Result" style="width: 300px; height: 60px; font-size: 26px;color: blue" onclick="InstView()"/></div>
+                    
+                </div>
+	
+                </div> <br/><br/><br/>
+				<div style="width:100%; margin-top: 20px;">
+					Help Line (9:00 AM to 8:00 PM):	<br/>
+					01732487334	<br/>
+					01731582032	<br/>
+					01977733550	<br/>
+					01977733557
+				</div>
+                <br/><br/><br/><br/><br/><br/><br/> 
+                <a href="http://app.xiclassadmission.gov.bd/board/pinretrival.action">
+                	<img src="pin.gif"  border="2"  style="border:2px solid green; width: 400px; height: 60px;"/>
+                </a>
+                <br/><br/>
+      
+            </div>
+        
+            <div id="helpline" style="display: none;">
+                    <table>
+                            <tr>
+                                <td colspan="3" style="text-align: center;font-size: 1.5em; color: green">Help Line</td>
+                            </tr>
+                            <tr>
+                            	<th style="padding-left: 10px;vertical-align: top;">General Board</th>
+                                <th style="padding-left: 10px;vertical-align: top;">Madrasa Board</th>
+                                <th style="padding-left: 10px;vertical-align: top;">Technical Board</th>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 10px;vertical-align: top;">
+                                        01977733550<br/>01977733554<br/>01977733557<br/>01977733558<br/>01732487334<br/>01731582032
+                                </td>
+                                <td style="padding-left: 10px;vertical-align: top;">
+                                        01757291281<br/>01757291282<br/>01757291283
+                                </td>
+                                <td style="padding-left: 10px;vertical-align: top;">
+                                        01550620604
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            <div id="sscresult" style="display: none;">
+                	<font size="8" color="green">
+                        <u>SSC/Equivalent Result: 2015</u> 
+                    </font>
+                    <br><br>
+                    <font size="6" color="green">
+                    <a href="http://163.53.149.220:85/">
+                        &#x099B;&#x09BE;&#x09A4;&#x09CD;&#x09B0; - &#x099B;&#x09BE;&#x09A4;&#x09CD;&#x09B0;&#x09C0;&#x09A6;&#x09C7;&#x09B0; &#x09AB;&#x09B2;&#x09BE;&#x09AB;&#x09B2;
+                    </a>
+                    </font>
+                    <font size="6" color="green">
+                    <br> &#x098F;&#x09AC;&#x0982;<br>
+                    <a href="http://163.53.149.220:85/inst/">
+                        &#x09AA;&#x09CD;&#x09B0;&#x09A4;&#x09BF;&#x09B7;&#x09CD;&#x09A0;&#x09BE;&#x09A8; &#x09AD;&#x09BF;&#x09A4;&#x09CD;&#x09A4;&#x09BF;&#x0995; &#x09AB;&#x09B2;&#x09BE;&#x09AB;&#x09B2;
+                    </a>
+                   </font>
+                </div>
+            <div id="downloads" style="display: none;">
+                	<font size="6" color="green">
+                        <a href="http://xiclassadmission.gov.bd/Final_instruction_manual.pdf">Admission Instructions</a>
+                    </font>
+                    <br/><br/>
+                   <font size="6" color="green">
+                        <a href="http://xiclassadmission.gov.bd/XIClassAdmissionManual.pdf">User Manual</a>
+                    </font>
+                    <br/><br/>
+                    <font size="6" color="green">
+                        <a href="http://xiclassadmission.gov.bd/PostApplicationProcedure.pdf">Post Application Procedure</a>
+                    </font>
+                    <br/><br/>
+             		<font size="6" color="green">
+                        <a href="http://xiclassadmission.gov.bd/ReceiveAdmissionManual.pdf">Admission Receive Procedure</a>
+                    </font>
+                </div>
+				
+			<div id="downloadeiinwithminimumGPA" style="display: none;">
+				   
+				   	<font size="6" color="red">
+                        List of Colleges with EIIN & Minimum GPA
+                    </font>
+                    <br/><br/>
+                	<font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Barishal.pdf">Barishal</a>
+                    </font>
+                    <br/><br/>
+					 <font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Chittagong.pdf">Chittagong</a>
+                    </font> 
+                   <br/><br/>					
+                   <font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Comilla.pdf">Comilla</a>
+                    </font>
+                    <br/><br/>
+					   <font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Dhaka.pdf">Dhaka</a>
+                    </font>
+                    <br/><br/>
+				    <font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Dinajpur.pdf">Dinajpur</a>
+                    </font>
+                    <br/><br/>
+				    <font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Jessore.pdf">Jessore</a>
+                    </font>
+                    <br/><br/>
+			         <font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Rajshahi.pdf">Rajshahi</a>
+                    </font>
+                    <br/><br/>
+                    <font size="4" color="green">
+                        <a href="http://xiclassadmission.gov.bd/EIIN_Sylhet.pdf">Sylhet</a>
+                    </font>
+                    <br/><br/>
+                                
+             </div>
+             <div id="downloadBoardWiseSeat" style="display: none;">
+				   
+				   	<font size="6" color="red">
+                        Board wise colleges total & available seat
+                    </font>
+                    <br/><br/>
+                	<font size="4" color="green">
+                        <a href="Barisal_seat.pdf">Barishal</a>
+                    </font>
+                    <br/><br/>
+					 <font size="4" color="green">
+                        <a href="Chittagong_seat.pdf">Chittagong</a>
+                    </font> 
+                   <br/><br/>					
+                   <font size="4" color="green">
+                        <a href="Comilla_seat.pdf">Comilla</a>
+                    </font>
+                    <br/><br/>
+					   <font size="4" color="green">
+                        <a href="Dhaka_seat.pdf">Dhaka</a>
+                    </font>
+                    <br/><br/>
+				    <font size="4" color="green">
+                        <a href="Dinajpur_seat.pdf">Dinajpur</a>
+                    </font>
+                    <br/><br/>
+				    <font size="4" color="green">
+                        <a href="Jessore_seat.pdf">Jessore</a>
+                    </font>
+                    <br/><br/>
+			         <font size="4" color="green">
+                        <a href="Rajshahi_seat.pdf">Rajshahi</a>
+                    </font>
+                    <br/><br/>
+                    <font size="4" color="green">
+                        <a href="Sylhet_seat.pdf">Sylhet</a>
+                    </font>
+                    <br/><br/>
+                                
+            </div>   
+            <div id="howtopay" style="display: none; margin-top: 50px;">
+                	      <font style='color:red;font-weight:bold'>To Confirm your Application, please pay 150 Taka by a Teletalk 				Mobile - go to message option and</font><br/>
+                          <font style='color:red;font-weight:bold'>type : <font color='green'>CAD</font> {SPACE} <font color='green'>WEB</font> {SPACE}  <font color='green'>Application ID</font> and send to 16222</font>
+                </div>
+            <div id="notices" style="display: none;">
+                	<fieldset>    
+                    <div id="headerDivImg" class="headerDivImg">
+                    <div id="titleTextImg" class="titleTextImg">Applicant Notices</div>
+                    <div style="float:right;"><a id="imageDivLink" href="javascript:toggleImage('messageDivImg', 'imageDivLink');"><img src="minus.png"></a></div></div>
+                    <div id="messageDivImg" class="messageDivImg" style="display: block;">
+                    	<ul style="text-align: left; list-style-type: decimal-leading-zero; margin-top: 1em; margin-bottom: 1 em; padding-left: 40px; padding-right: 20px;">
+                            <li>
+								&#2480;&#2495;&#2482;&#2495;&#2460; &#2488;&#2509;&#2482;&#2495;&#2474;&#2503; &#2438;&#2476;&#2503;&#2470;&#2472;&#2503;&#2480; &#2472;&#2495;&#2480;&#2509;&#2470;&#2503;&#2486;&#2472;&#2494;&#2404; (<a href="Notice_Release_Slip.pdf" target="_blank">Download</a>)
+                            </li>
+                            <li>	&#x9AB;&#x9B2;&#x9BE;&#x9AB;&#x9B2;&#x20;&#x9AA;&#x9B0;&#x9AC;&#x9B0;&#x9CD;&#x9A4;&#x9C0;&#x20;&#x9A8;&#x9BF;&#x9B0;&#x9CD;&#x9A6;&#x9C7;&#x9B6;&#x9A8;&#x9BE;&#x964; (<a href="Notice_July2.pdf" target="_blank">Download</a>)
+                            </li>
+                            <li>
+&#x9E7;&#x9E7;&#x2D;&#x9E6;&#x9ED;&#x2D;&#x9E8;&#x9E6;&#x9E7;&#x9EB;&#x20;&#x9A4;&#x9BE;&#x9B0;&#x9BF;&#x996;&#x9C7;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x995;&#x9BE;&#x9B6;&#x9BF;&#x9A4;&#x20;&#x9E9;&#x9DF;&#x20;&#x9AE;&#x9C7;&#x9A7;&#x9BE;&#x20;&#x9A4;&#x9BE;&#x9B2;&#x9BF;&#x995;&#x9BE;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x995;&#x9BE;&#x9B6;&#x9C7;&#x9B0;&#x20;&#x9AA;&#x9B0;&#x20;&#x2013;&#x20;&#x986;&#x99C;&#x20;&#x9A5;&#x9C7;&#x995;&#x9C7;&#x20;&#x986;&#x997;&#x9BE;&#x9AE;&#x9C0;&#x20;&#x9E7;&#x9EA;&#x2D;&#x9E6;&#x9ED;&#x2D;&#x9E8;&#x9E6;&#x9E7;&#x9EB;&#x20;&#x9AA;&#x9B0;&#x9CD;&#x9AF;&#x9A8;&#x9CD;&#x9A4;&#x20;&#x9AC;&#x9BF;&#x9B2;&#x9AE;&#x9CD;&#x9AC;&#x20;&#x9AB;&#x9BF;&#x20;&#x9AC;&#x9CD;&#x9AF;&#x9BE;&#x9A4;&#x9BF;&#x9A4;&#x20;&#x9B6;&#x9BF;&#x995;&#x9CD;&#x9B7;&#x9BE;&#x9B0;&#x9CD;&#x9A5;&#x9C0;&#x9B0;&#x9BE;&#x20;&#x9AD;&#x9B0;&#x9CD;&#x9A4;&#x9BF;&#x20;&#x9B9;&#x9A4;&#x9C7;&#x20;&#x9AA;&#x9BE;&#x9B0;&#x9AC;&#x9C7;&#x964;
+                            </li>
+                        </ul>
+                    </div>
+                    </fieldset>
+                    
+                    <fieldset>    
+                    <div id="headerDivImg1" class="headerDivImg">
+                    <div id="titleTextImg1" class="titleTextImg">College Notices</div>
+                    <div style="float:right;"><a id="imageDivLink1" href="javascript:toggleImage('messageDivImg1', 'imageDivLink1');"><img src="minus.png"></a></div></div>
+                    <div id="messageDivImg1" class="messageDivImg" style="display: none;">
+                    	<ul style="text-align: left; list-style-type: decimal-leading-zero; margin-top: 1em; margin-bottom: 1 em; padding-left: 40px; padding-right: 20px;">
+							<li>
+&#x9E8;&#x9E6;&#x9E7;&#x9EB;&#x20;&#x9B6;&#x9BF;&#x995;&#x9CD;&#x9B7;&#x9BE;&#x9AC;&#x9B0;&#x9CD;&#x9B7;&#x9C7;&#x20;&#x98F;&#x995;&#x9BE;&#x9A6;&#x9B6;&#x20;&#x9B6;&#x9CD;&#x9B0;&#x9C7;&#x9A3;&#x9C0;&#x9A4;&#x9C7;&#x20;&#x9AD;&#x9B0;&#x9CD;&#x9A4;&#x9BF;&#x99A;&#x9CD;&#x99B;&#x9C1;&#x995;&#x20;&#x9B8;&#x995;&#x9B2;&#x20;&#x99B;&#x9BE;&#x9A4;&#x9CD;&#x9B0;&#x2F;&#x20;&#x99B;&#x9BE;&#x9A4;&#x9CD;&#x9B0;&#x9C0;&#x995;&#x9C7;&#x20;&#x201C;&#x53;&#x6D;&#x61;&#x72;&#x74;&#x20;&#x41;&#x64;&#x6D;&#x69;&#x73;&#x73;&#x69;&#x6F;&#x6E;&#x20;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6D;&#x201D;&#x20;&#x98F;&#x9B0;&#x20;&#x9AE;&#x9BE;&#x9A7;&#x9CD;&#x9AF;&#x9AE;&#x9C7;&#x987;&#x20;&#x9B8;&#x9AE;&#x9CD;&#x9AA;&#x9C2;&#x9B0;&#x9CD;&#x9A3;&#x20;&#x9AD;&#x9B0;&#x9CD;&#x9A4;&#x9BF;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x995;&#x9CD;&#x9B0;&#x9BF;&#x9DF;&#x9BE;&#x20;&#x9B8;&#x9AE;&#x9CD;&#x9AA;&#x9A8;&#x9CD;&#x9A8;&#x20;&#x995;&#x9B0;&#x9A4;&#x9C7;&#x20;&#x9B9;&#x9AC;&#x9C7;&#x964;&#x20;&#x98F;&#x995;&#x9CD;&#x9B7;&#x9C7;&#x9A4;&#x9CD;&#x9B0;&#x9C7;&#x20;&#x995;&#x9B2;&#x9C7;&#x99C;&#x2F;&#x20;&#x9AE;&#x9BE;&#x9A6;&#x9CD;&#x9B0;&#x9BE;&#x9B8;&#x9BE;&#x20;&#x9B8;&#x9AE;&#x9C2;&#x9B9;&#x995;&#x9C7;&#x20;&#x9A4;&#x9BE;&#x9A6;&#x9C7;&#x9B0;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x9A4;&#x9BF;&#x9B7;&#x9CD;&#x9A0;&#x9BE;&#x9A8;&#x9C7;&#x9B0;&#x20;&#x99C;&#x9A8;&#x9CD;&#x9AF;&#x20;&#x9A8;&#x9BF;&#x9B0;&#x9CD;&#x9AC;&#x9BE;&#x99A;&#x9BF;&#x9A4;&#x20;&#x9B8;&#x995;&#x9B2;&#x20;&#x9B6;&#x9BF;&#x995;&#x9CD;&#x9B7;&#x9BE;&#x9B0;&#x9CD;&#x9A5;&#x9C0;&#x995;&#x9C7;&#x20;&#x9A8;&#x9BF;&#x99C;&#x9B8;&#x9CD;&#x9AC;&#x20;&#x9AC;&#x9CD;&#x9AF;&#x9BE;&#x9AC;&#x9B8;&#x9CD;&#x9A5;&#x9BE;&#x9AA;&#x9A8;&#x9BE;&#x9DF;&#x20;&#x9AD;&#x9B0;&#x9CD;&#x9A4;&#x9BF;&#x20;&#x9AB;&#x9BF;&#x20;&#x986;&#x9A6;&#x9BE;&#x9DF;&#x20;&#x9B8;&#x9BE;&#x9AA;&#x9C7;&#x995;&#x9CD;&#x9B7;&#x9C7;&#x20;&#x985;&#x9A8;&#x9B2;&#x9BE;&#x987;&#x9A8;&#x9C7;&#x20;&#x9A8;&#x9BF;&#x9B6;&#x9CD;&#x99A;&#x9BE;&#x9DF;&#x9A8;&#x20;&#x28;&#x43;&#x6F;&#x6E;&#x66;&#x69;&#x72;&#x6D;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x29;&#x20;&#x995;&#x9B0;&#x9A4;&#x9C7;&#x20;&#x9B9;&#x9AC;&#x9C7;&#x964;&#x20;&#x99B;&#x9BE;&#x9A4;&#x9CD;&#x9B0;&#x2F;&#x20;&#x99B;&#x9BE;&#x9A4;&#x9CD;&#x9B0;&#x9C0;&#x20;&#x9A8;&#x9BF;&#x9B6;&#x9CD;&#x99A;&#x9DF;&#x9A8;&#x9C7;&#x9B0;&#x20;&#x995;&#x9BE;&#x99C;&#x99F;&#x9BF;&#x20;&#x9B6;&#x9C1;&#x9A7;&#x9C1;&#x9AE;&#x9BE;&#x9A4;&#x9CD;&#x9B0;&#x20;&#x4F;&#x54;&#x50;&#x20;&#x28;&#x4F;&#x6E;&#x65;&#x20;&#x54;&#x69;&#x6D;&#x65;&#x20;&#x50;&#x61;&#x73;&#x73;&#x77;&#x6F;&#x72;&#x64;&#x29;&#x20;&#x98F;&#x9B0;&#x20;&#x9AE;&#x9BE;&#x9A7;&#x9CD;&#x9AF;&#x9AE;&#x9C7;&#x20;&#x995;&#x9B0;&#x9BE;&#x20;&#x9AF;&#x9BE;&#x9AC;&#x9C7;&#x964;&#x20;&#x98F;&#x99C;&#x9A8;&#x9CD;&#x9AF;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x9A4;&#x9CD;&#x9AF;&#x9C7;&#x995;&#x20;&#x995;&#x9B2;&#x9C7;&#x99C;&#x2F;&#x20;&#x9AE;&#x9BE;&#x9A6;&#x9CD;&#x9B0;&#x9BE;&#x9B8;&#x9BE;&#x9B0;&#x20;&#x985;&#x9A7;&#x9CD;&#x9AF;&#x995;&#x9CD;&#x9B7;&#x20;&#x985;&#x9A5;&#x9AC;&#x9BE;&#x20;&#x9AD;&#x9B0;&#x9CD;&#x9A4;&#x9BF;&#x20;&#x995;&#x9AE;&#x9BF;&#x99F;&#x9BF;&#x20;&#x98F;&#x995;&#x99C;&#x9A8;&#x20;&#x9B8;&#x9A6;&#x9B8;&#x9CD;&#x9AF;&#x9C7;&#x9B0;&#x20;&#x9AE;&#x9CB;&#x9AC;&#x9BE;&#x987;&#x9B2;&#x20;&#x9A8;&#x9AE;&#x9CD;&#x9AC;&#x9B0;&#x20;&#x98F;&#x995;&#x9BE;&#x9A8;&#x9CD;&#x9A4;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x9DF;&#x9CB;&#x99C;&#x9A8;&#x964;&#x20;&#x995;&#x9B2;&#x9C7;&#x99C;&#x20;&#x9AE;&#x9BE;&#x9A6;&#x9CD;&#x9B0;&#x9BE;&#x9B8;&#x9BE;&#x20;&#x995;&#x9B0;&#x9CD;&#x9A4;&#x9C3;&#x995;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x9A6;&#x9A4;&#x9CD;&#x9A4;&#x20;&#x9AE;&#x9CB;&#x9AC;&#x9BE;&#x987;&#x9B2;&#x20;&#x9A8;&#x9AE;&#x9CD;&#x9AC;&#x9B0;&#x9C7;&#x20;&#x4F;&#x54;&#x50;&#x20;&#x9AA;&#x9BE;&#x9A0;&#x9BE;&#x9A8;&#x9CB;&#x20;&#x9B9;&#x9AC;&#x9C7;&#x964;&#x20;&#x9AF;&#x9C7;&#x995;&#x9CB;&#x9A8;&#x9CB;&#x20;&#x995;&#x9B2;&#x9C7;&#x99C;&#x2F;&#x20;&#x9AE;&#x9BE;&#x9A6;&#x9CD;&#x9B0;&#x9BE;&#x9B8;&#x9BE;&#x9B0;&#x20;&#x9AE;&#x9CB;&#x9AC;&#x9BE;&#x987;&#x9B2;&#x20;&#x9A8;&#x9AE;&#x9CD;&#x9AC;&#x9B0;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x9A6;&#x9BE;&#x9A8;&#x9C7;&#x9B0;&#x2F;&#x20;&#x9B8;&#x982;&#x9B6;&#x9CB;&#x9A7;&#x9A8;&#x9C7;&#x9B0;&#x20;&#x99C;&#x9A8;&#x9CD;&#x9AF;&#x20;&#x77;&#x77;&#x77;&#x2E;&#x78;&#x69;&#x63;&#x6C;&#x61;&#x73;&#x73;&#x61;&#x64;&#x6D;&#x69;&#x73;&#x73;&#x69;&#x6F;&#x6E;&#x2E;&#x67;&#x6F;&#x76;&#x2E;&#x62;&#x64;&#x20;&#x98F;&#x9B0;&#x20;&#x27;&#x43;&#x6F;&#x6C;&#x6C;&#x65;&#x67;&#x65;&#x20;&#x53;&#x65;&#x63;&#x74;&#x69;&#x6F;&#x6E;&#x27;&#x20;&#x98F;&#x20;&#x43;&#x6C;&#x69;&#x63;&#x6B;&#x20;&#x995;&#x9B0;&#x9C7;&#x20;&#x9B8;&#x9CD;&#x9AC;&#x20;&#x9B8;&#x9CD;&#x9AC;&#x20;&#x995;&#x9B2;&#x9C7;&#x99C;&#x2F;&#x20;&#x9AE;&#x9BE;&#x9A6;&#x9CD;&#x9B0;&#x9BE;&#x9B8;&#x9BE;&#x9B0;&#x20;&#x45;&#x49;&#x49;&#x4E;&#x20;&#x9A8;&#x9AE;&#x9CD;&#x9AC;&#x9B0;&#x20;&#x993;&#x20;&#x9AA;&#x9BE;&#x9B8;&#x993;&#x9DF;&#x9BE;&#x9B0;&#x9CD;&#x9A1;&#x20;&#x28;&#x9AC;&#x9CB;&#x9B0;&#x9CD;&#x9A1;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x9A6;&#x9A4;&#x9CD;&#x9A4;&#x29;&#x20;&#x9AC;&#x9CD;&#x9AF;&#x9AC;&#x9B9;&#x9BE;&#x9B0;&#x20;&#x995;&#x9B0;&#x9C7;&#x20;&#x6C;&#x6F;&#x67;&#x69;&#x6E;&#x20;&#x995;&#x9B0;&#x9A4;&#x9C7;&#x20;&#x9B9;&#x9AC;&#x9C7;&#x964;&#x20;&#x985;&#x9A4;&#x9AA;&#x9B0;&#x20;&#x9AE;&#x9CB;&#x9AC;&#x9BE;&#x987;&#x9B2;&#x20;&#x9A8;&#x9AE;&#x9CD;&#x9AC;&#x9B0;&#x99F;&#x9BF;&#x20;&#x9E8;&#x20;&#x9AC;&#x9BE;&#x9B0;&#x20;&#x98F;&#x9A8;&#x9CD;&#x99F;&#x9CD;&#x9B0;&#x9BF;&#x20;&#x9AA;&#x9C2;&#x9B0;&#x9CD;&#x9AC;&#x995;&#x20;&#x53;&#x75;&#x62;&#x6D;&#x69;&#x74;&#x20;&#x995;&#x9B0;&#x9A4;&#x9C7;&#x20;&#x9B9;&#x9AC;&#x9C7;&#x964;
+                            </li> 
+                            <li>
+&#x9AD;&#x9B0;&#x9CD;&#x9A4;&#x9BF;&#x20;&#x9A8;&#x9BF;&#x9B6;&#x9CD;&#x99A;&#x9BE;&#x9DF;&#x9A8;&#x20;&#x9AA;&#x9CD;&#x9B0;&#x995;&#x9CD;&#x9B0;&#x9BF;&#x9DF;&#x9BE;&#x964;&#x20; (<a href="ReceiveAdmissionManual.pdf" target="_blank" >Download</a>)
+                            </li>                       	
+                        </ul>
+                    </div>
+                    </fieldset>
+                </div>
+                
+		</div>		
+		</center>
+                
+                <br/><br/><br/><br/>
+                <div id="footer">
+                    <p>
+                        <div style="float: left;width: 70%;text-align: left;padding-left: 10px;">&copy; 2015 Ministry of Education, All Rights Reserved</div>
+                        <div style="float: left;width: 28%;text-align: right;">
+                            
+                        </div>
+                    
+                    </p>
+		</div>
+	</div>
+<script type="text/javascript">
+function shoHideDivs(divname){
+	document.getElementById("home").style.display = "none";
+	document.getElementById("helpline").style.display = "none";
+	document.getElementById("sscresult").style.display = "none";
+	document.getElementById("downloads").style.display = "none";
+	document.getElementById("downloadeiinwithminimumGPA").style.display = "none";
+	document.getElementById("howtopay").style.display = "none";
+	document.getElementById("notices").style.display = "none";
+	document.getElementById("downloadBoardWiseSeat").style.display = "none";
+	document.getElementById(divname).style.display = "block";
+	
+}
+
+function IndView(){
+	window.location.href = 'http://result.xiclassadmission.gov.bd:85/cad/';
+}
+function InstView(){
+	window.location.href = 'http://result.xiclassadmission.gov.bd:85/cad_inst/';
+	//window.location.href = 'http://app.xiclassadmission.gov.bd/board/login';
+}
+
+function applicantNotice(){
+	shoHideDivs('notices');
+	toggleImage('messageDivImg', 'imageDivLink');
+	divNotice('messageDivImg', 'imageDivLink','messageDivImg1', 'imageDivLink1');
+}
+
+function collegeNotice(){
+	shoHideDivs('notices');
+	toggleImage('messageDivImg1', 'imageDivLink1');
+	divNotice('messageDivImg1', 'imageDivLink1', 'messageDivImg', 'imageDivLink');
+}
+
+function toggleImage(showHideDiv, switchImgTag) {
+	var ele = document.getElementById(showHideDiv);
+	var imageEle = document.getElementById(switchImgTag);
+	if(ele.style.display == "block") {
+		ele.style.display = "none";
+		imageEle.innerHTML = '<img src="plus.png">';
+	}
+	else {
+		ele.style.display = "block";
+		imageEle.innerHTML = '<img src="minus.png">';
+	}	
+}
+
+function divNotice(showHideDiv, switchImgTag, hideDiv, hideImgTag){
+	var ele = document.getElementById(showHideDiv);
+	var ele1 = document.getElementById(hideDiv);
+	var imageEle = document.getElementById(switchImgTag);
+	var imageEle1 = document.getElementById(hideImgTag);
+	ele.style.display = "block";
+	imageEle.innerHTML = '<img src="minus.png">';
+	ele1.style.display = "none";
+	imageEle1.innerHTML = '<img src="plus.png">';
+	
+}
+
+</script>
+</body>
+</html>

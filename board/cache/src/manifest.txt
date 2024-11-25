@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: com/ojdbc14.jar com/spymemcached-2.8.2.jar
+Created-By: 1.7.0_21 (Oracle Corporation)
+Main-Class: com.cache.rmi.Server
+

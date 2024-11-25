@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <package name="college" namespace="/" extends="struts-securityaddon-withauth">
+  
+  
+  
+   <!-- Application Module Start  --> 
+ 		<action name="appCheck_College" class="edu.action.college.Application" method="applicationInfoCheck_College">
+			<result name="newapplication">/WEB-INF/jsp/ApplicationForm_College/PersonalInfoNewApplication.jsp</result>
+			<result name="notAdmitted">/WEB-INF/jsp/ApplicationForm_College/PersonalInfoNotAdmitted.jsp</result>
+			<result name="alreadyAdmitted">/WEB-INF/jsp/ApplicationForm_College/AlreadyApplied.jsp</result>
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm_College/InvalidSscInfoNew.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>			
+	    </action>
+	    <action name="showPersonalInfoDelwar_College" class="edu.action.college.Application" method="showPersonalInfo_College">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/PersonalInfoSMSOnly.jsp</result>
+	    </action>
+		
+	  	<!-- <action name="applicationForm_College" class="edu.action.college.Application" method="loadApplication">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/ApplicationForm.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action> -->
+		
+		<action name="applicationInfoCheck_College" class="edu.action.college.Application" method="applicationInfoCheck_College">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/PersonalInfo.jsp</result>
+			<result name="already_applied">/WEB-INF/jsp/ApplicationForm_College/AlreadyApplied.jsp</result>
+			<result name="onlysmsapplication">/WEB-INF/jsp/ApplicationForm_College/OnlySMSApplication.jsp</result>
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm_College/InvalidSscInfoNew.jsp</result>
+			<result name="nopayment">/WEB-INF/jsp/ApplicationForm_College/TxInfo.jsp</result>			
+	    </action>
+		<action name="applicationInfoCheckTx_College" class="edu.action.college.Application" method="applicationInfoCheckTx_College">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/PersonalInfo.jsp</result>
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm_College/InvalidSscInfoNew.jsp</result>
+			<result name="wait">/WEB-INF/jsp/ApplicationForm_College/WaitTxIdMsg.jsp</result>
+			<result name="notwait">/WEB-INF/jsp/ApplicationForm_College/NotWaitTxIdMsg.jsp</result>
+	    </action>
+	    
+	    <action name="showPersonalInfo_College" class="edu.action.college.Application" method="showPersonalInfo_College">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/PersonalInfoReadOnly.jsp</result>
+	    </action>
+
+	    <action name="showPersonalInfo_SMS" class="edu.action.college.Application" method="showPersonalInfo_SMS">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/PersonalInfoSMSOnly.jsp</result>
+	    </action>
+	    
+	    <action name="mobile_validation_College" class="edu.action.college.Application" method="mobile_validation_College">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/CollegeSelection.jsp</result>
+	    </action>
+	    
+	    
+	        <action name="getCollegeSVG" class="edu.action.college.Application" method="getCollegeSVG">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	     <action name="getCollegeSeat" class="edu.action.college.Application" method="getCollegeSeat">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	    
+	    
+	     
+	    <action name="getsscinfo" class="edu.action.college.Application" method="getSSCInfo">
+	      	<result name="success">
+                <param name="location">/WEB-INF/jsp/ApplicationForm/json.jsp</param>
+            </result>
+	    </action>
+	    <action name="getColleges" class="edu.action.college.Application" method="getColleges">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    <action name="getThanas" class="edu.action.college.Application" method="getThanas">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	    
+	      <action name="showQuotaInfo_College" class="edu.action.college.Application" method="showPersonalInfo_College">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/quotaEdit.jsp</result>
+	    </action>
+	    
+	     <action name="editQuota_College" class="edu.action.college.Application" method="editQuota_College">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_College/quotaEdited.jsp</result>
+	    </action>
+	    
+	    <action name="editChoiceList_College" class="edu.action.college.Application" method="editChoiceList_College">
+				<result name="success">/WEB-INF/jsp/ApplicationForm_College/CollegeSelectionEdit.jsp</result>
+	    </action>
+	    
+	    
+		<action name="submitApplication_College" class="edu.action.college.Application" method="submitApplication_College">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	    <action name="submitApplicationEdit_College" class="edu.action.college.Application" method="submitApplicationEdit_College">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	    <action name="applicantCopyHtmlReport_College">
+	      	<result name="success">
+                /WEB-INF/jsp/ApplicationForm_College/HtmlReport.jsp
+            </result>
+	    </action>
+
+	    <action name="choiceListReport_College" class="edu.action.college.Application" method="choiceListReport_College">
+	      	<result name="success">/WEB-INF/jsp/Applicant/HtmlReport.jsp</result>
+	    </action> 
+  
+ 
+  <!-- Application Module End  -->
+  
+         <action name="collegeHome" class="edu.action.college.College" method="collegeHome" >
+			<result name="success">/WEB-INF/jsp/college/Blank.jsp</result>
+		</action>
+		
+		<action name="collegeresult" class="edu.action.college.College" method="collegeresult" >
+			<result name="success">/WEB-INF/jsp/college/resultpdfcollege.jsp</result>
+		</action>
+		
+  		<action name="collegeDashBoard" class="edu.action.college.Dashboard" method="totalAppliationTotalApplicant" >
+			<result name="success">/WEB-INF/jsp/college/collegeDashboard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="listOfApplicant" class="edu.action.college.ListOfApplicant" method="listOfApplicant" >
+			<result name="success">/WEB-INF/jsp/college/ListOfApplicant.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="applicantDetails" class="edu.action.college.ApplicantInfo" method="collegeApplicantInfo" >
+			<result name="success">/WEB-INF/jsp/college/CollegeApplicantInfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result> 
+		</action>
+		
+		<action name="dateWiseApplicationStatCollege" class="edu.action.college.ApplicationStatCollege" method="dateWiseApplicationStatCollege" >
+			<result name="success">/WEB-INF/jsp/college/DateWiseAppStatCollege.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="shiftVersionGroupApplicationNumberOfCollege" class="edu.action.college.ApplicationStatCollege" method="shiftVersionGroupApplicationNumberOfCollege" >
+			<result name="success">/WEB-INF/jsp/college/ShiftVersionGroupApplicationNumberOfCollege.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+    
+
+    	<action name="specialQuotaStudentList" class="edu.action.college.ListOfApplicant" method="specialQuotaList" >
+			<result name="success">/WEB-INF/jsp/college/SpecialQuotaStudentList.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action>
+		 
+		<action name="downloadsqCSV"  class="edu.action.college.DownloadSQcsv"  method="downloadsqCSV"  >    
+        <result type="stream">        
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+        
+        <action name="downloadeqCSV"  class="edu.action.college.DownloadEQcsv"  method="downloadeqCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+		
+		<action name="grantSpecialQuota" class="edu.action.college.ListOfApplicant" method="grantSpecialQuota" >
+				<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+				<!-- 
+			<result name="success"  type="redirectAction">
+				<param name="namespace">college</param>
+				<param name="actionName">specialQuotaStudentList.action</param>
+				<param name="successMessage">${successMessage}</param>
+				<param name="errorMessage">${errorMessage}</param>
+			</result>
+				 -->
+		</action>
+		
+		<action name="shownewsqstudent" class="edu.action.college.ListOfApplicant" method="newspecialQuotaStudent" >
+			<result name="success">/WEB-INF/jsp/college/ShowSpecialQuotaNewStudentInfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="approveSpecialQuotaIndividualy" class="edu.action.college.ListOfApplicant" method="approveSpecialQuotaIndividualy" >
+		<result name="success">/WEB-INF/jsp/college/SpecialQuotaStudentList.jsp</result>
+<!-- 			<result name="success"  type="redirectAction">
+				<param name="namespace">college</param>
+				<param name="actionName">specialQuotaStudentList.action</param>
+				<param name="successMessage">${successMessage}</param>
+				<param name="errorMessage">${errorMessage}</param>
+			</result> -->
+		</action>
+		
+		
+		<action name="educationQuotaStudentList" class="edu.action.college.ListOfApplicant" method="educationQuotaList" >
+			<result name="success">/WEB-INF/jsp/college/EducationQuotaStudentList.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action>
+		 
+		<action name="grantEducationQuota" class="edu.action.college.ListOfApplicant" method="grantEducationQuota" >
+			<result name="success"  type="redirectAction">
+				<param name="namespace">college</param>
+				<param name="actionName">educationQuotaStudentList.action</param>
+				<param name="successMessage">${successMessage}</param>
+				<param name="errorMessage">${errorMessage}</param>
+			</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="showneweqstudent" class="edu.action.college.ListOfApplicant" method="newEducationQuotaStudent" >
+			<result name="success">/WEB-INF/jsp/college/ShowEducationQuotaNewStudentInfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="approveEducationQuotaIndividualy" class="edu.action.college.ListOfApplicant" method="approveEducationQuotaIndividualy" >
+			<result name="success"  type="redirectAction">
+				<param name="namespace">college</param>
+				<param name="actionName">educationQuotaStudentList.action</param>
+				<param name="successMessage">${successMessage}</param>
+				<param name="errorMessage">${errorMessage}</param>
+			</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+
+		  <action name="collegeCourse" class="edu.action.college.CollegeCourseAction" method="showCollegeCourse" >
+			<result name="success">/WEB-INF/jsp/college/CollegeCourses.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		
+  		
+ 
+		<action name="searchsqstudent" class="edu.action.college.ListOfApplicant"  >
+			<result name="success">/WEB-INF/jsp/college/NewSpecialQuotaStudentSearch.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		<action name="uploadXLSapplicant" class="edu.action.college.ListOfApplicant" method="uploadXLSapplicant" >
+		     <result name="success">/WEB-INF/jsp/college/SpecialQuotaStudentList.jsp</result>
+			<result name="redirectTest">/WEB-INF/jsp/college/ShowSpecialQuotaNewStudentInfo.jsp</result>
+		</action>
+		
+	    <action name="saveMobileSendOtp" class="edu.action.college.College" method="saveMobileSendNewOtp">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+	    
+	    <action name="validateCollMobileOtp" class="edu.action.college.College" method="verifyCollegeMobileValidateOtp">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+    	
+		<action name="collegeOtpForm" class="edu.action.college.College" method="collegeOtpForm" >
+			<result name="success">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="sendNewCollOtp" class="edu.action.college.College" method="sendNewOtp">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+	    
+	    <action name="validateCollOtp" class="edu.action.college.College" method="validateOtp">
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+	    </action>
+	    
+	    <!-- Blocked for college user  -->
+  		
+		 <!-- <action name="collegeSVGload" class="edu.action.college.Admission" method="svgLoad" >
+			<result name="success">/WEB-INF/jsp/college/CollegeAdmissionResultDownloadHome.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>  -->
+		
+		<action name="admissionResultReportAction" class="edu.action.college.CollegeResultPdf" method="downloadResultPdf">
+			<result type="stream">
+            	<param name="contentType">application/pdf</param>
+              	<param name="inputName">inputStream</param>
+          	</result>
+      	</action>	
+      	
+      	<action name="admissionResultCSV"  class="edu.action.college.DownloadAdmissionResultcsv"  method="downloadResultCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+
+		<!-- COLLEGE RECEIVE -->
+ 
+ 		 
+		 <action name="collegeSVGloadReceiveAdmissionHome" class="edu.action.college.Admission" method="svgLoad" >
+			<result name="success">/WEB-INF/jsp/college/NonApprovedStudentListOfMeritHome.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		
+		 <action name="nonApprovedStudentListOfMerit1" class="edu.action.college.Admission" method="nonApprovedStudentListOfMerit1" >
+			<result name="success">/WEB-INF/jsp/college/NonApprovedStudentListOfMerit.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action> 
+ 
+ 		 
+		<action name="downloadnonApprovedApplicantCSV"  class="edu.action.college.DownloadNonApprovedMeritStudentcsv"  method="downloadNonApprovedMeritStudentCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+ 	
+		 <action name="receiveNonApproveStudentOfMerit" class="edu.action.college.Admission" method="receiveNonApproveStudentOfMerit" >
+				<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>		 
+		  </action>
+		   
+		  
+		  
+<!-- 
+	 	  <action name="receiveNonApproveStudentOfMerit" class="edu.action.college.Admission" method="receiveNonApproveStudentOfMerit" >
+			<result name="success"  type="redirectAction">
+				<param name="namespace">college</param>
+				<param name="actionName">nonApprovedStudentListOfMerit.action</param>
+				<param name="successMessage">${successMessage}</param>
+				<param name="errorMessage">${errorMessage}</param>
+			</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		  </action>
+ -->		  
+	  
+
+   		 <action name="collegeSVGloadReceivedAdmissionHome" class="edu.action.college.Admission" method="svgLoad" >
+			<result name="success">/WEB-INF/jsp/college/ApprovedStudentListOfMeritHome.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>  
+ 		 
+ 
+		<action name="approvedStudentListOfMerit" class="edu.action.college.Admission" method="approvedStudentListOfMerit" >
+			<result name="success">/WEB-INF/jsp/college/ApprovedStudentListOfMerit.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action> 
+	
+        <action name="downloadApprovedApplicantCSV"  class="edu.action.college.DownloadApprovedMeritStudentcsv"  method="downloadApprovedMeritStudentCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+		  
+  				
+<!-- 		 <action name="cancelApproveStudentOfMerit" class="edu.action.college.Admission" method="cancelApproveStudentOfMerit" >
+				<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>		 
+		  </action>   -->
+
+ 		  
+		 <!-- <action name="admissionCancelList" class="edu.action.college.Admission" method="admissionCancelListOfMerit" >
+			<result name="success">/WEB-INF/jsp/college/AdmissionCancelledStudentListOfMerit.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action> --> 
+		
+		
+		 <action name="downloadAdmisionCancelledApplicantCSV"  class="edu.action.college.DownloadAdmissionCancelledMeritStudentcsv"  method="downloadAdmissionCancelledMeritStudentCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+           
+        
+		  <action name="collegeSVGloadTotalAdmitted" class="edu.action.college.Admission" method="svgLoad" >
+			<result name="success">/WEB-INF/jsp/college/TotalAdmittedStudentHome.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action> 
+		 
+		     
+        <action name="totalSVGAdmittedAction"  class="edu.action.college.DownloadTotalAdmittedStudentcsv"  method="downloadTotalAdmittedStudentcsv"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+     
+        <!-- Blocked for college user  --> 
+        
+        <!--    Unnecessary Code     -->
+      	
+      	<action name="uploadXLSNonApprovedapplicant" class="edu.action.college.Admission" method="uploadXLSNonApprovedapplicant" >
+		     <result name="success">/WEB-INF/jsp/college/NonApprovedStudentListOfMerit.jsp</result>
+			
+		</action>	
+		
+		 		
+		<action name="cancelApproveStudentOfMerit" class="edu.action.college.Admission" method="cancelApproveStudentOfMerit" >
+			<result name="success"  type="redirectAction">
+				<param name="namespace">college</param>
+				<param name="actionName">approvedStudentListOfMerit.action</param>
+				<param name="successMessage">${successMessage}</param>
+				<param name="errorMessage">${errorMessage}</param>
+			</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action> 
+	
+			
+
+		
+		<!-- <action name="totalApprovedStudentListOfMerit" class="edu.action.college.Admission" method="totalApprovedStudentListOfMerit" >
+			<result name="success">/WEB-INF/jsp/college/TotalApprovedStudentListOfMerit.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action> 
+		
+		 <action name="downloadTotalApprovedApplicantCSV"  class="edu.action.college.DownloadTotalApprovedMeritStudentcsv"  method="downloadTotalApprovedMeritStudentCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+		-->
+		
+		  <!-- 	     <action name="nonApprovedStudentListOfMerit" class="edu.action.college.Admission" method="nonApprovedStudentListOfMerit" >
+			<result name="success">/WEB-INF/jsp/college/NonApprovedStudentListOfMerit.jsp</result>
+            <result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action>
+-->
+         <!-- <action name="nonApprovedStudentListOfMerit2" class="edu.action.college.Admission" method="nonApprovedStudentListOfMerit" >
+			<result name="success">/WEB-INF/jsp/college/NonApprovedStudentListOfMerit2.jsp</result>
+            <result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action> -->    
+<!-- 	    <action name="nonApprovedStudentListOfMerit" class="edu.action.college.Admission" method="nonApprovedStudentListOfMerit" >
+			<result name="success">/WEB-INF/jsp/college/NonApprovedStudentListOfMerit.jsp</result>
+			<result name="validate"  type="redirectAction">
+				<param name="namespace">/college</param>
+				<param name="actionName">collegeDashBoard</param>
+			</result>
+            <result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			<result name="optform">/WEB-INF/jsp/college/collegeOtp.jsp</result>
+		</action> -->
+
+<!-- college 3 user -->
+ 		
+		<action name="collegeDataEntry" class="edu.action.college.Admission" method="svgLoad3" >
+			<result name="success">/WEB-INF/jsp/college/CollegeDataEntry.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="alreadyAdded" class="edu.action.college.Admission" method="alreadyAdded" >
+			<result name="success">/WEB-INF/jsp/college/CollegeDataEntryCom.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="deleteAdded" class="edu.action.college.Admission" method="deleteAdded" />
+
+		<action name="collegeDEForm" class="edu.action.college.Admission" method="svgLoad3" >
+			<result name="success">/WEB-INF/jsp/college/CollegeDEForm.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="showStudent" class="edu.action.college.Admission" method="showStudent" >
+			<result name="success">/WEB-INF/jsp/college/ShowStudent.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="addStudent" class="edu.action.college.Admission" method="addStudent" />
+		  
+		
+		<action name="registration" class="edu.action.college.Registration" method="svgLoad" >
+			<result name="success">/WEB-INF/jsp/college/registration/Registration.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		<action name="getDataForRegistration" class="edu.action.college.Registration" method="getDataForRegistration" >
+		   <!-- <result name="success">/WEB-INF/jsp/college/TimeOverHome.jsp</result>-->
+			<result name="success">/WEB-INF/jsp/college/registration/DataForRegistration.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 <action name="getIndividualData" class="edu.action.college.Registration" method="getIndividualData" />
+		 <action name="getCollegeSubject" class="edu.action.college.Registration" method="getCollegeSubject" />
+		 <action name="submitRegData" class="edu.action.college.Registration" method="submitRegData" />
+		 
+		 
+		 
+		 <action name="savePhoto" class="edu.action.college.Registration" method="savePhoto" />
+		 
+		 <action name="registrationupdate" class="edu.action.college.RegistrationUpdate" method="svgLoad" >
+			<result name="success">/WEB-INF/jsp/college/registration/update/RegistrationUpdate.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 <action name="getDataForRegistrationUpdate" class="edu.action.college.RegistrationUpdate" method="getRegisteredData" >
+		   <!-- <result name="success">/WEB-INF/jsp/college/TimeOverHome.jsp</result>-->
+			<result name="success">/WEB-INF/jsp/college/registration/update/DataForRegistration.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 <action name="getIndividualDataUpdate" class="edu.action.college.RegistrationUpdate" method="getIndividualData" />
+		 <action name="updateRegData" class="edu.action.college.RegistrationUpdate" method="updateRegData" />
+		   
+		 
+		 <action name="registrationManual" class="edu.action.college.Admission" method="svgLoad3" >
+			<result name="success">/WEB-INF/jsp/college/registration/RegistrationManual.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 <action name="getDataForRegistrationManual" class="edu.action.college.Registration" method="getDataForRegistrationManual" >
+		   <!-- <result name="success">/WEB-INF/jsp/college/TimeOverHome.jsp</result>-->
+			<result name="success">/WEB-INF/jsp/college/registration/DataForRegistrationManual.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 <action name="getIndividualDataManual" class="edu.action.college.Registration" method="getIndividualDataManual" />
+		 <action name="submitRegDataManual" class="edu.action.college.Registration" method="submitRegDataManual" />
+		 
+		 
+		 <action name="regpdateManual" class="edu.action.college.Admission" method="svgLoad3" >
+			<result name="success">/WEB-INF/jsp/college/registration/update/RegUpdateManual.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 <action name="getManualDataForRegUpdate" class="edu.action.college.RegistrationUpdate" method="getManualDataForRegUpdate" >
+		   <!-- <result name="success">/WEB-INF/jsp/college/TimeOverHome.jsp</result>-->
+			<result name="success">/WEB-INF/jsp/college/registration/update/DataForManualReg.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 <action name="getIndManualDataUpdate" class="edu.action.college.RegistrationUpdate" method="getIndManualDataUpdate" />
+		 <action name="updateRegDataManual" class="edu.action.college.RegistrationUpdate" method="updateRegDataManual" />
+		 
+		 
+		 <action name="changeSVGHome" class="edu.action.college.CollegeSVG" method="changeSVGHome" >
+		   <result name="success">/WEB-INF/jsp/college/CollegeSgvHome.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 
+		 <action name="changeSVGSearch" class="edu.action.college.CollegeSVG" method="changeSVGSearch" >
+			<result name="success">/WEB-INF/jsp/college/CollegeSvgChange.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		<action name="printManualDataFinal" class="edu.action.college.RegistrationUpdate" method="printManualDataFinal" />
+			<!-- 
+		<action name="changeSVGSubmit" class="edu.action.college.CollegeSVG" method="changeSVGSubmit" >
+			<result name="success">/WEB-INF/jsp/college/CollegeSvgChangeSubmitResult.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>	
+		-->
+		
+		 	
+  </package>
+</struts>
+  

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <package name="admin" namespace="/" extends="json-default">
+ 		  
+  		<action name="adminDashBoard" class="edu.action.interBoard.Dashboard" method="totalAppliationTotalApplicantInterBoard" >
+			<result name="success">/WEB-INF/jsp/interBoard/InterBoardDashboard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		
+		</action>
+		
+		<action name="adminDashBoardPayment" class="edu.action.interBoard.Dashboard" method="totalAppliationTotalApplicantInterBoardPayment" >
+			<result name="success">/WEB-INF/jsp/interBoard/InterBoardDashboardPayment.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		
+		</action>
+		
+		<action name="boardDashBoardsearhByAdmin" class="edu.action.interBoard.Dashboard" method="boardDashBoard" >
+			<result name="success">/WEB-INF/jsp/interBoard/BoardDashBoardSearchByInterBoard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			
+		</action>
+		
+		<action name="showboardDashBoard" class="edu.action.interBoard.Dashboard" method="TotalApplicantstotalAppliationsBoardWise" >
+			<result name="success">/WEB-INF/jsp/interBoard/BoardDashboard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+			
+		</action>
+		
+		<action name="dateWiseApplicationStatInterBoard" class="edu.action.interBoard.ApplicationStatBoard" method="dateWiseApplicationStatInterBoard" >
+			<result name="success">/WEB-INF/jsp/interBoard/DateWiseAppStatInterBoard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="districtUnderBoard" class="edu.action.interBoard.ApplicationStatBoard" method="districtinfo" >
+			<result name="success">/WEB-INF/jsp/interBoard/collegewisedetailsinfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="searchCollegesactionInterBoard" class="edu.action.interBoard.ApplicationStatBoard" method="searchColleges" >
+               <result type="json"></result>
+               <interceptor-ref name="defaultStack" />
+		</action>
+		
+		
+		<action name="searchDistInterBoard" class="edu.action.interBoard.ApplicationStatBoard" method="searchDist" >
+               <result type="json"></result>
+               <interceptor-ref name="defaultStack" />
+		</action>
+		
+		
+		
+		
+
+		<action name="listOfApplicantOfCollegeSearchByInterBoard" class="edu.action.interBoard.ListOfApplicant" method="listOfApplicantOfCollegeSearchByBoard" >
+			<result name="success">/WEB-INF/jsp/interBoard/ListOfApplicant.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="applicantDetailsSearchByInterBoard" class="edu.action.interBoard.ApplicantInfo" method="collegeApplicantInfo" >
+			<result name="success">/WEB-INF/jsp/interBoard/CollegeApplicantInfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="collegeDashBoardSearchByInterBoard" class="edu.action.interBoard.Dashboard" method="totalAppliationTotalApplicantCollegeWise" >
+			<result name="success">/WEB-INF/jsp/interBoard/collegeDashboard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="S_V_G_ApplicationNumberOfCollegeSearchByInterBoard" class="edu.action.interBoard.ApplicationStatBoard" method="shiftVersionGroupApplicationNumberOfCollege" >
+			<result name="success">/WEB-INF/jsp/interBoard/S-V-G-ApplicationNumberOfCollege.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+
+
+		<action name="ccPinRetrival" class="edu.action.interBoard.PinRetrivalByCC">
+	      	<result name="success">/WEB-INF/jsp/interBoard/CCPinRetrival.jsp</result>
+	      	<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	    </action>
+	   
+		
+		<action name="CCretrivedPin" class="edu.action.interBoard.RetrivePinByCC" >
+			<result name="success">/WEB-INF/jsp/interBoard/CCRetrivalPin.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		<action name="resultSta" class="edu.action.interBoard.PinRetrivalByCC" method="resultSta" >
+	      	<result name="success">/WEB-INF/jsp/interBoard/resultStati.jsp</result>
+	      	<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	    </action>
+
+		
+		<action name="retrivedRes" class="edu.action.interBoard.RetriveResSt" >
+			<result name="success">/WEB-INF/jsp/interBoard/RetrivalResView.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+
+
+
+		   
+  </package>
+</struts>
+  

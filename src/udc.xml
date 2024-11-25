@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+<struts>
+  <package name="udc" namespace="/udc" extends="struts-securityaddon-withauth">
+  
+  		<action name="choiceListSearchHome">
+	      	<result name="success">/WEB-INF/jsp/UDC/UnionDegitalCenter.jsp</result>
+	    </action>
+    
+    	<action name="showChoiceList" class="edu.action.udc.Udc" method="showChoiceList">
+			<result name="success">/WEB-INF/jsp/UDC/ChoiceList.jsp</result>   		
+		</action>
+		
+	    <action name="udcChoiceListReport" class="edu.action.udc.Udc" method="choiceListReport">
+	      	<result name="success">/WEB-INF/jsp/UDC/HtmlReport.jsp</result>
+	    </action>
+    
+  </package>
+</struts>

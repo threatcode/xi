@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="false" />
+    <include file="struts-securityaddon.xml"/>
+    
+<package name="struts-securityaddon-withauth" extends="struts-securityaddon">
+
+<interceptors>
+
+			<interceptor name="authenticationInterceptor" class="edu.interceptors.AuthenticationInterceptor" />
+			<interceptor name="rolesInterceptor" class="edu.interceptors.RolesInterceptor" />
+			
+			<interceptor-stack name="defaultSecurityStackWithAuthentication">			
+				<interceptor-ref name="defaultSecurityStack" />
+				<interceptor-ref name="authenticationInterceptor">
+					<param name="excludeActions">
+					applicationForm,newApplicationForm,applicationInfoCheck,applicationInfoCheckNew,getCollegeSVG,getsscinfo,getThanas,getColleges,submitApplication,submitNewApplication,checkValidity,checkCollegeValidity,login,loginBoard,submitApplication,sendOapplication,staticSMS,staticSMSPopulate,staticSMSTT,cancelAdmission,saveCancelAdmission,getApplicantForCancel,sendNotSendById,sendNotSendFromTable,va,cr,sendNotSendApplication,sendResult,changeStatusPaidApplication,sendNotSendApplication_All,TT2buetSMSapplication,PaymentOapplication,applicantCopyHtmlReport,applicantCopyHtmlReportNew,logout,pinretrieval,retrivedPin,mobretrieval,retrivedMob,getfeedback,insertFeedBack,uploadxls,readexcel,choiceListSearchHome,showChoiceList,udcChoiceListReport,viewResult1,viewRegPayment_2019
+					,applicationForm_TT,applicationInfoCheck_TT,submitApplication_TT,applicantCopyHtmlReport_TT,showPersonalInfo_TT,showPersonalInfo_SMS,showQuotaInfo_TT,editQuota_TT,editChoiceList_TT,submitApplicationEdit_TT,applicationInfoCheckTx_TT,sentSecurityCode,mobile_validation_TT,wrongGroup,wrongVersion,wrongSeatCount,wrongGender
+					,choiceListReport_TT,ResultView,getResult,captcha,appDelwar_TT,checkContact,appCheckDelwar_TT,appCheckDelwar_TT_ReadOnly,showPersonalInfoDelwar_TT, showPersonalInfoAppUpdate,SurePayment,updateEditChoiceList,updateSMSOnly,
+					applicationForm,newApplicationForm,applicationInfoCheck,applicationInfoCheckNew,getCollegeSVG,getsscinfo,getThanas,getColleges,submitApplication,submitNewApplication,checkValidity,checkCollegeValidity,login,loginBoard,submitApplication,sendOapplication,staticSMS,staticSMSPopulate,staticSMSTT,cancelAdmission,saveCancelAdmission,getApplicantForCancel,sendNotSendById,sendNotSendFromTable,va,cr,sendNotSendApplication,sendResult,changeStatusPaidApplication,sendNotSendApplication_All,TT2buetSMSapplication,PaymentOapplication,applicantCopyHtmlReport,applicantCopyHtmlReportNew,logout,pinretrieval,retrivedPin,mobretrieval,retrivedMob,getfeedback,insertFeedBack,uploadxls,readexcel,choiceListSearchHome,showChoiceList,udcChoiceListReport,viewResult1,viewRegPayment_2019
+					,applicationForm_TT,applicationInfoCheck_TT,submitApplication_TT,applicantCopyHtmlReport_TT,showPersonalInfo_TT,showPersonalInfo_SMS,showQuotaInfo_TT,editQuota_TT,editChoiceList_TT,submitApplicationEdit_TT,applicationInfoCheckTx_TT,sentSecurityCode,mobile_validation_TT,wrongGroup,wrongVersion,wrongSeatCount,wrongGender
+					,choiceListReport_TT,ResultView,getResult,captcha,appDelwar_TT,checkContact,appCheckDelwar_TT,appCheckDelwar_TT_ReadOnly,showPersonalInfoDelwar_TT, showPersonalInfoAppUpdate,updateEditChoiceList,updateSMSOnly,
+					applicationForm,newApplicationForm,applicationInfoCheck,applicationInfoCheckNew,getCollegeSVG,getsscinfo,getThanas,getColleges,submitApplication,submitNewApplication,
+					checkValidity,checkCollegeValidity,login,loginBoard,submitApplication,sendOapplication,staticSMS,staticSMSPopulate,staticSMSTT,cancelAdmission,saveCancelAdmission,getApplicantForCancel,
+					sendNotSendById,sendNotSendFromTable,va,cr,sendNotSendApplication,sendResult,changeStatusPaidApplication,sendNotSendApplication_All,TT2buetSMSapplication,conPayment,PaymentOapplication,
+					applicantCopyHtmlReport,applicantCopyHtmlReportNew,logout,pinretrieval,retrivedPin,mobretrieval,retrivedMob,getfeedback,insertFeedBack,uploadxls,readexcel,
+					choiceListSearchHome,showChoiceList,udcChoiceListReport,viewResult1,viewRegPayment_2019,applicationForm_TT,applicationInfoCheck_TT,submitApplication_TT,applicantCopyHtmlReport_TT,
+					showPersonalInfo_TT,showPersonalInfo_SMS,showQuotaInfo_TT,editQuota_TT,editChoiceList_TT,submitApplicationEdit_TT,applicationInfoCheckTx_TT,sentSecurityCode,mobile_validation_TT,PullPayment,
+					wrongGroup,wrongVersion,wrongSeatCount,wrongGender,complain_ap,choiceListReport_TT,viewResult_2019,viewResult_final,showResult_2019,showResult_Final,showRegPayment_2019,captcha,appDelwar_TT,checkContact,appCheckDelwar_TT,appCheckDelwar_TT_ReadOnly,showPersonalInfoDelwar_TT, 
+					showPersonalInfoAppUpdate,showPersonalInfoSMSOnly,updateEditChoiceList,updateSMSOnly,applicantLogin,applicantCheckValidity,ApplicantViewResult, migrationNew,submitMigrationNew,DDBL_Payment,appLogout,collegeHome,changeSVGHome,changeSVGSearch,changeSVGSubmit,deleteCache,svgHtml,svgOpen,
+					getCollegeSVGOpen,
+
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="rolesInterceptor">
+					<param name="roleActions">*:applicationForm,newApplicationForm,applicationInfoCheck,applicationInfoCheckNew,getCollegeSVG,getCollegeSVGOpen,getsscinfo,getThanas,getColleges,submitApplication,submitNewApplication,login,loginBoard,submitApplication,sendOapplication,staticSMS,staticSMSPopulate,staticSMSTT,cancelAdmission,saveCancelAdmission,getApplicantForCancel,sendNotSendById,
+					sendNotSendFromTable,va,cr,sendNotSendApplication,sendResult,changeStatusPaidApplication,sendNotSendApplication_All,TT2buetSMSapplication,
+					conPayment,PaymentOapplication,checkValidity,applicantCopyHtmlReport,applicantCopyHtmlReportNew,choiceListReport,logout,pinretrieval,retrivedPin,mobretrieval,retrivedMob,getfeedback,insertFeedBack,uploadxls,readexcel,choiceListSearchHome,showChoiceList,udcChoiceListReport,viewResult1,viewRegPayment_2019
+					,applicationForm_TT,applicationInfoCheck_TT,submitApplication_TT,applicantCopyHtmlReport_TT,showPersonalInfo_TT,showPersonalInfo_SMS,showQuotaInfo_TT,editQuota_TT,editChoiceList_TT,submitApplicationEdit_TT,applicationInfoCheckTx_TT,sentSecurityCode,mobile_validation_TT,
+					wrongGroup,wrongVersion,wrongSeatCount,wrongGender,choiceListReport_TT,ResultView,getResult,captcha,appDelwar_TT,checkContact,appCheckDelwar_TT,appCheckDelwar_TT_ReadOnly,showPersonalInfoDelwar_TT,showPersonalInfoAppUpdate,showPersonalInfoSMSOnly,updateEditChoiceList,SurePayment,
+					wrongGroup,wrongVersion,wrongSeatCount,wrongGender,choiceListReport_TT,ResultView,getResult,captcha,appDelwar_TT,checkContact,appCheckDelwar_TT,showPersonalInfoDelwar_TT,showPersonalInfoAppUpdate,updateEditChoiceList,
+					wrongGroup,wrongVersion,wrongSeatCount,wrongGender,complain_ap,choiceListReport_TT,viewResult_2019,viewResult_final,showResult_2019,showResult_Final,showRegPayment_2019,captcha,appDelwar_TT,checkContact,appCheckDelwar_TT,showPersonalInfoDelwar_TT,showPersonalInfoAppUpdate,
+					updateEditChoiceList,updateSMSOnly,applicantLogin,applicantCheckValidity,migrationNew,submitMigrationNew,DDBL_Payment,appLogout,collegeHome,changeSVGHome,changeSVGSearch, changeSVGSubmit,deleteCache,PullPayment;							
+												 
+						applicant: applicantInfo,applicantInfoReadOnly,choiceList,choiceListReadOnly,updateChoiceList,sendNewOtp,validateOtp,validateOtpRl,updateQuotaInfo,updateEducationQuotaInfo,ApplicantViewResult,migrationForm,submitMigrationForm,
+								   releaseSlipReadOnly,releaseSlip,updateReleaseList,releaseSlipReport,applicantPhotoChangeView,applicantPhotoValidation,changePhoto,migrationNew,submitMigrationNew,PullPayment;	   
+
+						napplicant:getCollegeSVG,getColleges,newApplicantInfo,newApplicantInfoReadOnly,newChoiceList,newChoiceListReadOnly,newUpdateChoiceList,otpForm,newChoiceListReport,sendNewOtp,validateOtp,validateOtpRl,newUpdateQuotaInfo,viewResult_2019,viewResult_final;
+						
+						college: collegeDashBoard,listOfApplicant,applicantDetails,dateWiseApplicationStatCollege,shiftVersionGroupApplicationNumberOfCollege,specialQuotaStudentList,grantSpecialQuota,collegeCourse,searchsqstudent,shownewsqstudent,saveMobileSendOtp,validateCollMobileOtp,downloadsqCSV,downloadeqCSV,
+						approveSpecialQuotaIndividualy,uploadXLSapplicant,educationQuotaStudentList,grantEducationQuota,showneweqstudent,approveEducationQuotaIndividualy,collegeOtpForm,sendNewCollOtp,validateCollOtp,collegeSVGloadReceiveAdmissionHome,nonApprovedStudentListOfMerit1,getDataForRegistration,getDataForRegistrationUpdate,submitRegData,updateRegData,getIndividualData,getCollegeSubject,getIndividualDataUpdate,nonApprovedStudentListOfMerit2,downloadnonApprovedApplicantCSV,
+						receiveNonApproveStudentOfMerit,collegeSVGloadReceivedAdmissionHome,approvedStudentListOfMerit,cancelApproveStudentOfMerit,collegeSVGload,admissionResultReportAction,downloadApprovedApplicantCSV,uploadXLSNonApprovedapplicant,nonReceivedList,admissionCancelList,downloadAdmisionCancelledApplicantCSV,totalApprovedStudentListOfMerit,savePhoto,
+						downloadTotalApprovedApplicantCSV,collegeSVGloadTotalAdmitted,totalSVGAdmittedAction,admissionResultCSV,
+						applicationForm_College,appCheck_College,getCollegeSeat,submitApplication_College,registration,registrationupdate,collegeHome,changeSVGHome,changeSVGSearch,changeSVGSubmit,applicantPhotoValidation,changePhoto,
+						registrationManual,getDataForRegistrationManual,getIndividualDataManual,applicantPhotoValidation,submitRegDataManual,regpdateManual,getManualDataForRegUpdate,getIndManualDataUpdate,updateRegDataManual,updateRegData,
+						printManualDataFinal,collegeresult;
+						
+						college3: collegeDataEntry,alreadyAdded,deleteAdded,collegeDEForm,showStudent,addStudent,registrationManual,getDataForRegistrationManual,getIndividualDataManual,applicantPhotoValidation,submitRegDataManual,regpdateManual,getManualDataForRegUpdate,
+						getIndManualDataUpdate,updateRegDataManual,updateRegData,printManualDataFinal;
+
+						badmin: boardDashBoard,svgLand,ccPinRetrival,dateWiseApplicationStatBoard,districtUnderBoard4,applicantRecoveryMobile,applicantRecoveryData;
+						
+						bgeneral: boardDashBoard,ccPinRetrival,dateWiseApplicationStatBoard,districtUnderBoard4,applicantRecoveryMobile,applicantRecoveryData;
+
+						board: boardDashBoard,collegeDashBoardUnderBoard,dateWiseApplicationStatBoard,allcollegeInfo,allcollegeInfoUnderBoard,S_V_G_ApplicationNumberOfCollege,applicantDetails,applicantRecoveryData,downloadnonReceivedListCSV,receivedList,downloadReceivedListCSV,applicantRecoveryMobile,svgShow,ccPinRetrival;
+						
+						boardadmin: boardDashBoard,collegeDashBoardUnderBoard,dateWiseApplicationStatBoard,allcollegeInfo,allcollegeInfoUnderBoard,S_V_G_ApplicationNumberOfCollege,applicantDetails,
+						releaseApplicant,applicantRecoveryData,insertNewApplicantFreshData,deleteApplicantDataRecovery,applicantQuotaEdit,searchApplicantQuota_TT,editQuota,applicantRecoveryMobile,
+						searchApplicantFake_TT,pinretrivalBoard,admissionCancelBoardHome,cancelAdmissionSearch,cancelApproveStudentOfMeritByBoard,admissionReReceiveBoardHome,reReceiveAdmissionSearch,reApproveStudentOfMeritByBoard,ccPinRetrival,CCretrivedPin,searchApplicantFake_pay,applicantDelPay,deleteAppPayment,applicantDelP,eiinLoad,getSubjectforEiin,deleteSubject,getSubjectEiin,addSubject,svgShow;
+						searchApplicantFake_TT,pinretrivalBoard,admissionCancelBoardHome,cancelAdmissionSearch,cancelApproveStudentOfMeritByBoard,admissionReReceiveBoardHome,reReceiveAdmissionSearch,reApproveStudentOfMeritByBoard,ccPinRetrival,CCretrivedPin,searchApplicantFake_pay,applicantDelPay,deleteAppPayment,applicantDelP,eiinLoad,getSubjectforEiin,deleteSubject,getSubjectEiin,addSubject;
+						searchApplicantFake_TT,pinretrivalBoard,admissionCancelBoardHome,cancelAdmissionSearch,cancelApproveStudentOfMeritByBoard,admissionReReceiveBoardHome,reReceiveAdmissionSearch,reApproveStudentOfMeritByBoard,ccPinRetrival,CCretrivedPin,searchApplicantFake_pay,applicantDelPay,deleteAppPayment,applicantDelP,
+						eiinLoad,getSubjectforEiin,deleteSubject,getSubjectEiin,addSubject;
+
+						
+						boardentry: eiinManualEntry,getSVGforEiin,addStudentBoard,eiinManualShow,alreadyAddedBoard;
+						
+						admin: adminDashBoard,boardDashBoardsearhByAdmin,showboardDashBoard,dateWiseApplicationStatInterBoard,districtUnderBoard,searchCollegesactionInterBoard,listOfApplicantOfCollegeSearchByInterBoard,applicantDetailsSearchByInterBoard,collegeDashBoardSearchByInterBoard,S_V_G_ApplicationNumberOfCollegeSearchByInterBoard,
+						        ccPinRetrival,CCretrivedPin,adminDashBoardPayment,svgShow,resultSta,retrivedRes;
+						udc: adminDashBoard,boardDashBoardsearhByAdmin,showboardDashBoard,dateWiseApplicationStatInterBoard,districtUnderBoard,searchCollegesactionInterBoard,listOfApplicantOfCollegeSearchByInterBoard,applicantDetailsSearchByInterBoard,collegeDashBoardSearchByInterBoard,S_V_G_ApplicationNumberOfCollegeSearchByInterBoard,
+						        ccPinRetrivalUdc,CCretrivedPinUdc,adminDashBoardPayment,svgShow,svgPdf;						
+					</param>
+				</interceptor-ref>
+			</interceptor-stack>
+			
+			 <interceptor-stack name="storeStack">
+                <interceptor-ref name="defaultSecurityStackWithAuthentication"/>
+                <interceptor-ref name="store">
+					<param name="operationMode">STORE</param>
+				</interceptor-ref>
+            </interceptor-stack>
+
+            <interceptor-stack name="retrieveStack">
+                <interceptor-ref name="defaultSecurityStackWithAuthentication"/>
+                <interceptor-ref name="store">
+					<param name="operationMode">RETRIEVE</param>
+				</interceptor-ref>
+            </interceptor-stack>
+            
+</interceptors>
+<default-interceptor-ref name="defaultSecurityStackWithAuthentication" />
+
+<global-results>
+			<result name="authentication_required">/WEB-INF/jsp/security/AuthenticationRequired.jsp</result>
+			<result name="authorization_required">/WEB-INF/jsp/security/AuthorizationRequired.jsp</result>
+</global-results>
+		
+		 <action name="login" class="edu.utils.Login">
+	      	<result name="success">
+                /WEB-INF/jsp/util/login.jsp
+            </result>
+            <result name="failure">
+                /WEB-INF/jsp/security/Error404.jsp
+            </result>
+			<result name="badmin">
+				/WEB-INF/jsp/board/Home.jsp		
+			</result>
+			<result name="bgeneral">
+				/WEB-INF/jsp/board/BoardDashboard.jsp		
+			</result>
+ 			<result name="college">
+				/WEB-INF/jsp/college/Blank.jsp <!-- collegeDashboard.jsp -->
+			</result>
+	    </action> 
+	    
+	    <action name="checkValidity" class="edu.utils.CheckValidity">
+            <result name="failure">
+                /WEB-INF/jsp/util/login.jsp
+            </result>
+            <result name="invalid"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">login</param>
+			</result>
+			<result name="badmin">
+				/WEB-INF/jsp/board/Home.jsp
+				<!-- /WEB-INF/jsp/board/BoardDashboard.jsp -->		
+			</result>
+			<result name="bgeneral">
+				/WEB-INF/jsp/board/BoardDashboard.jsp		
+			</result>
+ 			<result name="college">
+				/WEB-INF/jsp/college/Blank.jsp <!-- collegeDashboard.jsp -->
+			</result>
+			<!-- 
+			<result name="board">
+				/WEB-INF/jsp/board/BoardDashboard.jsp		
+			</result>
+			 -->
+			 <result name="board" type="redirectAction">
+			 	<param name="namespace">/</param>
+				<param name="actionName">svgLand</param>
+			 </result>
+			<result name="boardadmin">
+				/WEB-INF/jsp/board/BoardDashboard.jsp	
+			</result>
+			<result name="admin">
+				/WEB-INF/jsp/interBoard/InterBoardDashboard.jsp		
+			</result>
+			<result name="udc">
+				/WEB-INF/jsp/interBoard/InterBoardDashboardCallCenter.jsp		
+			</result>
+            <result name="boardentry"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">eiinManualEntry</param>
+			</result>
+
+            <result name="applicant"  type="redirectAction">
+				<param name="namespace">applicant</param>
+				<param name="actionName">applicantInfoReadOnly</param> 
+				<param name="actionName">releaseSlipReadOnly.action</param>
+			</result>
+			
+		</action>
+		
+		
+			    
+	    <action name="applicantLogin" class="edu.utils.Login" method="applicantLogin">
+	      	<result name="success">
+                /WEB-INF/jsp/util/applicantLogin.jsp
+            </result>
+            <result name="failure">
+                /WEB-INF/jsp/security/Error404.jsp
+            </result>
+           <result  name="invalid"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">applicantLogin</param>
+			</result>
+	    </action> 
+	    
+	       <action name="loginBoard" class="edu.utils.Login">
+	      	<result name="success">
+                /WEB-INF/jsp/util/loginBoard.jsp
+            </result>
+            <result name="failure">
+                /WEB-INF/jsp/security/Error404.jsp
+            </result>
+            <result name="invalid"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">login</param>
+			</result>
+ 			<result name="college">
+				<param name="namespace">/</param>
+				<param name="actionName">registration</param>
+				<!-- <param name="actionName">collegeHome</param> -->
+			</result>
+<!-- 			
+			<result name="college3">
+				/WEB-INF/jsp/college/CollegeDEForm.jsp
+			</result>
+ -->			
+			<result name="board">
+				/WEB-INF/jsp/board/BoardDashboard.jsp		
+			</result>
+			<result name="boardadmin">
+				/WEB-INF/jsp/board/BoardDashboard.jsp	
+			</result>
+			<result name="admin">
+				/WEB-INF/jsp/interBoard/InterBoardDashboard.jsp		
+			</result>
+            
+	    </action>
+	    
+
+	    
+	    
+	     <action name="applicantCheckValidity" class="edu.utils.CheckValidity" method="applicantCheckValidity">
+			<!-- 
+			<result name="failed">/WEB-INF/jsp/util/applicantLogin.jsp</result>
+			-->
+			<result name="failed"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">applicantLogin</param> 
+			</result>
+			
+			<result name="applicant"  type="redirectAction">
+				<param name="namespace">applicant</param>
+				<param name="actionName">migrationNew</param> 
+				<param name="actionName">migrationNew.action</param>
+			</result>
+			<!-- 
+            <result name="applicant"  type="redirectAction">
+				<param name="namespace">applicant</param>
+				<param name="actionName">applicantInfoReadOnly</param> 
+				<param name="actionName">releaseSlipReadOnly.action</param>
+			</result>
+			-->
+			<result name="invalid_info">/WEB-INF/jsp/Applicant/migration/InvalidSscInfoNew.jsp</result>
+			
+		</action>
+		
+		<action name="logout" class="edu.utils.Logout">
+			<result name="success">/WEB-INF/jsp/util/login.jsp</result>
+			<!-- <result type="redirect" name="success">/login</result> -->
+		</action>
+		<action name="appLogout" class="edu.utils.Logout" method="appLogout">
+			<result name="success">/WEB-INF/jsp/util/applicantLogin.jsp</result>
+		</action>		
+				
+		<action name="pinretrieval" class="edu.utils.PinRetrieval">
+	      	<result name="success">/WEB-INF/jsp/Applicant/PinRetrival.jsp</result>
+	    </action>
+		
+		<action name="retrivedPin" class="edu.action.applicant.RetrivedPin" method="retrivedPin" >
+			<result name="success">/WEB-INF/jsp/Applicant/RetrivedPin.jsp</result>
+		</action>
+		
+		
+		
+		<action name="mobretrieval" class="edu.utils.MobRetrieval">
+	      	<result name="success">/WEB-INF/jsp/Applicant/MobRetrival.jsp</result>
+	    </action>
+		
+		<action name="retrivedMob" class="edu.action.applicant.RetrivedMob" method="retrivedMob" >
+			<result name="success">/WEB-INF/jsp/Applicant/RetrivedPin.jsp</result>
+		</action>
+		
+		
+		
+		<action name="getfeedback" class="edu.utils.FeedBack">
+	      	<result name="success">/WEB-INF/jsp/util/FeedBackForm.jsp</result>
+	    </action>
+		
+		<action name="insertFeedBack" class="edu.action.applicant.InsetFeedBack" method="insertFeedBack" >
+			<result name="success">/WEB-INF/jsp/Applicant/FeedBackSuccesssMessage.jsp</result>
+		</action>
+		
+	   <action name="uploadxls" class="edu.utils.UploadXLS">
+	      	<result name="success">/WEB-INF/jsp/util/UploadXLS.jsp</result>
+	   </action>
+	   <action name="readexcel" class="edu.utils.ReadExcel">
+	      	<result name="success">/WEB-INF/jsp/util/UploadXLS.jsp</result>
+	    </action>
+	    
+	    
+	    <!-- Choice List -->
+  		<action name="choiceListSearchHome">
+	      	<result name="success">/WEB-INF/jsp/UDC/UnionDegitalCenter.jsp</result>
+	    </action>
+  		<action name="va">
+	      	<result name="success">/WEB-INF/jsp/Applicant/va.jsp</result>
+	    </action>
+    
+    	<action name="showChoiceList" class="edu.action.udc.Udc" method="showChoiceList">
+			<result name="success">/WEB-INF/jsp/UDC/ChoiceList.jsp</result>   		
+		</action>
+		
+	    <action name="udcChoiceListReport" class="edu.action.udc.Udc" method="choiceListReport">
+	      	<result name="success">/WEB-INF/jsp/UDC/HtmlReport.jsp</result>
+	    </action>
+
+  		<action name="cr">
+	      	<result name="success">/WEB-INF/jsp/Applicant/cr.jsp</result>
+	    </action>
+	    
+<!-- 
+		<action name="viewResult1" class="edu.action.udc.Udc" method="viewResult">
+	      	<result name="success">/WEB-INF/jsp/Applicant/Result_1.jsp</result>
+	    </action>
+-->
+
+	    <!-- Choice List -->
+	    
+	    
+		
+		<!-- Payment Block -->
+
+ 
+	    <action name="PaymentOapplication" class="edu.action.application.SendOApplication" method="PaymentOapplication">
+	    </action>	    
+	    <action name="TT2buetSMSapplication" class="edu.action.application.SendOApplication" method="TT2buetSMSapplication">
+	    </action>
+	    
+	    <action name="conPayment" class="edu.action.application.SendOApplication" method="conPayment"/>	    
+
+	    
+	    
+	    <action name="wrongGroup" class="edu.action.application.Complain" method="wrongGroup"></action>
+	    <action name="wrongVersion" class="edu.action.application.Complain" method="wrongVersion"></action>
+	    <action name="wrongSeatCount" class="edu.action.application.Complain" method="wrongSeatCount"></action>
+	    <action name="wrongGender" class="edu.action.application.Complain" method="wrongGender"></action>
+	    
+	    <action name="complain_ap" class="edu.action.application.Complain" method="complain_ap"></action>
+	    
+	    
+	    
+		<action name="sendOapplication" class="edu.action.application.SendOApplication" method="sendOapplication">
+	    </action>
+	    <action name="sendNotSendApplication" class="edu.action.application.SendOApplication" method="sendNotSendApplication">
+	    </action>
+	    <action name="sendResult" class="edu.action.application.SendOApplication" method="sendResult">
+	    </action>
+	    <action name="changeStatusPaidApplication" class="edu.action.application.SendOApplication" method="changeStatusPaidApplication">
+	    </action>
+	    <action name="sendNotSendApplication_All" class="edu.action.application.SendOApplication" method="sendNotSendApplication_All">
+	    </action>
+	    <action name="sendNotSendById" class="edu.action.application.SendOApplication" method="sendNotSendById">
+	    </action>
+	    <action name="sendNotSendFromTable" class="edu.action.application.SendOApplication" method="sendNotSendFromTable">
+	    </action>
+	    <action name="ListApplication" class="edu.action.application.SendOApplication" method="ListApplication">
+	    </action>	    
+	    <action name="P1Application" class="edu.action.application.SendOApplication" method="P1Application">
+	    </action>	    
+	    <action name="getPassword" class="edu.action.application.SendOApplication" method="getPassword">
+	    </action>
+	    <action name="staticSMSPopulate" class="edu.action.application.SendOApplication" method="staticSMSPopulate">
+	    </action>	    
+	    <action name="staticSMS" class="edu.action.application.SendOApplication" method="staticSMS">
+	    </action>
+	    <action name="staticSMSTT" class="edu.action.application.SendOApplication" method="staticSMSTT">
+	    </action>
+	    
+	    
+	    <action name="cancelAdmission" class="edu.action.application.Application" method="cancelAdmission">
+	    	<result name="success">/WEB-INF/jsp/ApplicationForm/cancelAdmission.jsp</result>
+	    </action>
+	    <action name="getApplicantForCancel" class="edu.action.application.Application" method="getApplicantForCancel">
+	    </action>
+	    <action name="saveCancelAdmission" class="edu.action.application.Application" method="saveCancelAdmission">
+	    </action>
+	    
+	    <action name="viewResult_2019" class="edu.action.application.Application" method="ResultView">
+	    	<result name="success">/WEB-INF/jsp/ApplicationForm_TT/ResultView.jsp</result>
+	    </action>
+	    <action name="showResult_2019" class="edu.action.application.Application" method="getResult"/>
+	    <action name="viewRegPayment_2019" class="edu.action.application.Application" method="viewRegPayment">
+	    	<result name="success">/WEB-INF/jsp/ApplicationForm_TT/RegPayment.jsp</result>
+	    </action>
+	    <action name="showRegPayment_2019" class="edu.action.application.Application" method="getRegPayment"/>
+
+<!-- 
+	    <action name="viewResult_final" class="edu.action.application.Application" method="ResultView">
+	    	<result name="success">/WEB-INF/jsp/ApplicationForm_TT/ResultView_Final.jsp</result>
+	    </action>
+	    <action name="showResult_Final" class="edu.action.application.Application" method="getResult_Final"/>
+ -->	    
+	    
+	    	
+	    
+	    <action name="captcha" class="edu.action.application.Application" method="captcha">
+	    	<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	    	    
+	    
+	     <action name="SurePayment" class="edu.surecash.api.PayResource" method="SureCashPayment">
+	    	<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	   
+	    
+	    <!-- Payment Block -->
+	    
+	    <action name="DDBL_Payment" class="edu.utils.Payment" method="DDBL_Payment">			
+		</action>
+	   
+		 <action name="deleteCache" class="edu.utils.CheckValidity" method="deleteCache"></action>
+		 
+		 
+
+	</package>
+
+
+ 
+	<include file="application.xml"/> 
+	<include file="board.xml"/>
+	<include file="admin.xml"/>
+<!--
+	
+	<include file="college.xml"/>
+	
+	<include file="applicant.xml"/>
+	<include file="open.xml"/>
+ -->	
+	<!-- 
+	<include file="napplicant.xml"/>
+	
+	  -->
+ 
+ 
+	<!-- 
+	<include file="udc.xml"/>
+  -->
+
+</struts>    
+

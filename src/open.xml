@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <package name="open" namespace="/" extends="json-default">
+
+		<action name="svgOpen" class="edu.action.open.SVG" method="loadApplication" >
+			<result name="success">/WEB-INF/jsp/open/svg/svgHtmlView.jsp</result>
+		</action>
+		<action name="getCollegesDist" class="edu.action.open.SVG" method="getColleges">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    <action name="getCollegeSVGOpen" class="edu.action.open.SVG" method="getCollegeSVGOpen">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+		<action name="getCollege" class="edu.action.open.College" method="getCollege">
+	      		<result type="json"></result>
+	    </action>
+	    
+	    
+	    
+	    
+	    <action name="loginCollege" class="edu.utils.Login" method="loginCollege">
+	      	<result name="success">
+                /WEB-INF/jsp/util/loginCollege.jsp
+            </result>
+	    </action> 
+  </package>
+</struts>
+  		

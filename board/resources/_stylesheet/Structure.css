@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+html, body
+{
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	background-repeat: repeat-x;
+}
+
+body
+{
+	min-width: 1104px;
+	min-height: 660px;
+	padding: 0;
+	color: #000;
+	background-color: #f1f5f8;
+	background-image: url(../_images/Background.png);
+	background-repeat: repeat-x;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	line-height: 1.4;
+	margin: 0px;
+}
+
+/* ~~ Element/tag selectors ~~ */
+
+
+ul, ol, dl
+{ /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p
+{
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+
+
+
+.container
+{
+	width: 1074px;
+	background-color: #FFF; /* the auto value on the sides, coupled with the width, centers the layout */
+	overflow: hidden; /* this declaration makes the .container understand where the floated columns within ends and contain them */
+	margin-top: 15px;
+	margin-right: auto;
+	margin-bottom: 15px;
+	margin-left: auto;
+	border-radius: 6px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: outset;
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-left-style: outset;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	z-index: 9;
+	min-height: 645px;
+}
+
+
+.clearfloat
+{ /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the overflow:hidden on the .container is removed */
+	clear: both;
+	height: 0;
+	font-size: 1px;
+	line-height: 0px;
+}

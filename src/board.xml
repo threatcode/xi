@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <package name="board" namespace="/" extends="json-default">
+ 		  
+ 		
+  		<action name="boardDashBoard" class="edu.action.board.Dashboard" method="totalAppliationTotalApplicant" >
+			<result name="success">/WEB-INF/jsp/board/BoardDashboard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		 
+		
+		<action name="collegeDashBoardUnderBoard" class="edu.action.board.Dashboard" method="totalAppliationTotalApplicantCollegeWise" >
+			<result name="success">/WEB-INF/jsp/board/collegeDashboard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="dateWiseApplicationStatBoard" class="edu.action.board.ApplicationStatBoard" method="dateWiseApplicationStatBoard" >
+			<result name="success">/WEB-INF/jsp/board/DateWiseAppStatBoard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<!-- Toraf -->
+		<!-- 
+		
+    			<action name="landSVG"  >
+					<result name="success">/WEB-INF/jsp/board/ViewSVG.jsp</result>			
+				</action>
+    
+    
+    	<action name="viewSVG" class="edu.action.board.ViewColllegeSVG" method="viewSVGByBoard" >
+				<result name="success">/WEB-INF/jsp/board/ajaxViewSVG.jsp</result>
+				<result name="error">/WEB-INF/jsp/board/errorSVG.jsp</result>				
+		</action>
+    
+    				
+		 -->
+		
+		 <!-- Toraf -->
+		
+		
+		
+		<action name="allcollegeInfo" class="edu.action.board.ApplicationStatBoard" method="collegeinfo" >
+			<result name="success">/WEB-INF/jsp/board/S-V-G-AppNumberOfCollege.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+	 	<action name="allcollegeInfoUnderBoard" class="edu.action.board.ApplicationStatBoard" method="collegeinfo" >
+			<result name="success">/WEB-INF/jsp/board/AllCollegeInfoUnderBoard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="listOfApplicantOfCollegeSearchByBoard" class="edu.action.board.ListOfApplicant" method="listOfApplicantOfCollegeSearchByBoard" >
+			<result name="success">/WEB-INF/jsp/board/ListOfApplicant.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="applicantDetails" class="edu.action.board.ApplicantInfo" method="collegeApplicantInfo" >
+			<result name="success">/WEB-INF/jsp/board/CollegeApplicantInfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result> 
+		</action>
+		
+		
+		
+		<action name="applicantQuotaEdit" class="edu.action.board.ApplicantInfo" method="applicantQuotaEdit" >
+			<result name="success">/WEB-INF/jsp/board/ApplicantQuotaEdit.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>
+		
+		 <action name="searchApplicantQuota_TT" class="edu.action.board.Board" method="showPersonalInfo_TT" >
+			<result name="success">/WEB-INF/jsp/board/quotaEdit.jsp</result>
+			<result name="nossc">/WEB-INF/jsp/board/Invalid.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>	
+			  		  	
+	  <action name="editQuota" class="edu.action.board.Board" method="editQuota_TT">
+			<result name="success">/WEB-INF/jsp/board/quotaEdited.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+<!-- 			<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result> -->
+	    </action>
+		
+		<action name="applicantRecoveryData" class="edu.action.board.ApplicantInfo" method="applicantrecovery" >
+			<result name="success">/WEB-INF/jsp/board/ApplicantDataRecovery.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>
+  	
+   	  	
+	  	<action name="applicantDelP" class="edu.action.board.ApplicantInfo" method="applicantrecovery" >
+			<result name="success">/WEB-INF/jsp/board/ApplicantPayCancle.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>
+ 	  	
+	  	
+	  	
+	  	<action name="applicantDelPay" class="edu.action.board.ApplicantInfo" method="deleteAppPayment" >
+			<result name="success">/WEB-INF/jsp/board/ApplicantPayCancle.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>
+	  	  	
+	  	
+	  	
+	  	<action name="searchApplicantFake_pay" class="edu.action.board.Board" method="showPersonalInfo_TT" >
+			<result name="success">/WEB-INF/jsp/board/personalInfoCanclePay.jsp</result>
+			<result name="nossc">/WEB-INF/jsp/board/Invalid.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>	
+	  	
+	  	
+	  	<action name="applicantRecoveryMobile" class="edu.action.board.ApplicantInfo" method="applicantrecovery" >
+			<result name="success">/WEB-INF/jsp/board/ApplicantMobileRecovery.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>
+	  	<action name="searchApplicantFake_TT" class="edu.action.board.Board" method="showPersonalInfo_TT" >
+			<result name="success">/WEB-INF/jsp/board/personalInfoReadOnly.jsp</result>
+			<result name="nossc">/WEB-INF/jsp/board/Invalid.jsp</result>
+			<result name="noapp">/WEB-INF/jsp/board/noapp.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	  	</action>	
+	  	
+ 	  	
+	  	<action name="deleteApplication_TT" class="edu.action.board.ApplicantInfo" method="deleteApplication_TT" >
+	  	       <result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	  	</action>
+	  	
+	  	
+	  		<action name="deleteAppPayment" class="edu.action.board.ApplicantInfo" method="deleteAppPayment" >
+	  	       <result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+			
+	  		</action>
+	  	
+	  	
+	  	
+ 	  	
+	  	<action name="updateMobile_TT" class="edu.action.board.ApplicantInfo" method="updateMobile_TT" >
+	  	       <result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	  	</action>
+	  	
+		  
+		 <action name="insertNewApplicantFreshData" class="edu.action.board.ApplicantInfo" method="saveApplicantDataRecovery" >
+			<result name="success"  type="redirectAction">
+				<param name="namespace">/board</param>
+				<param name="actionName">applicantRecoveryData.action</param>
+				<param name="successMessage">${successMessage}</param>
+				<param name="errorMessage">${errorMessage}</param>
+			</result>
+		  </action>
+		  
+		   <action name="deleteapplicantRecoveryData" class="edu.action.board.ApplicantInfo" method="deleteApplicantDataRecovery" >
+			<result name="success"  type="redirectAction">
+				<param name="namespace">/board</param>
+				<param name="actionName">applicantRecoveryData.action</param>
+			</result>
+		  </action>
+		  
+		  <action name="smsSendRecoveryData" class="edu.action.board.ApplicantInfo" method="smsSendRecoveryData" >
+			<result name="success"  type="redirectAction">
+				<param name="namespace">/board</param>
+				<param name="actionName">applicantRecoveryData.action</param>
+			</result>
+		  </action>
+		  
+		
+		
+		
+<!-- 		 <action name="districtUnderBoard1" class="edu.action.board.ApplicationStatBoard" method="districtinfo" >
+			<result name="success">/WEB-INF/jsp/board/Test1.jsp</result>
+			<result name="input"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">logout.action</param>
+			</result>
+		</action>
+		
+		
+	  <action name="districtUnderBoard2" class="edu.action.board.ApplicationStatBoard" method="districtinfo" >
+			<result name="success">/WEB-INF/jsp/board/Test2.jsp</result>
+			<result name="input"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">logout.action</param>
+			</result>
+		</action>
+		
+		<action name="districtUnderBoard3" class="edu.action.board.ApplicationStatBoard" method="districtinfo" >
+			<result name="success">/WEB-INF/jsp/board/Test3.jsp</result>
+			<result name="input"  type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">logout.action</param>
+			</result>
+		</action> -->
+		<action name="districtUnderBoard4" class="edu.action.board.ApplicationStatBoard" method="districtinfo" >
+			<result name="success">/WEB-INF/jsp/board/collegewisedetailsinfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		<action name="S_V_G_ApplicationNumberOfCollege" class="edu.action.board.ApplicationStatBoard" method="shiftVersionGroupApplicationNumberOfCollege" >
+			<result name="success">/WEB-INF/jsp/board/S-V-G-ApplicationNumberOfCollege.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		
+		<!-- Toraf -->
+		 
+		<action name="districtUnderBoard5" class="edu.action.board.ApplicationStatBoard" method="districtinfo" >
+			<result name="success">/WEB-INF/jsp/board/collegewisereginfo.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>  
+		   
+		 <action name="collegeRegDashBoard" class="edu.action.board.Dashboard" method="totalRegCollegeWise" >
+			<result name="success">/WEB-INF/jsp/board/regDashboard.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		   
+		
+		<action name="svgLand" class="edu.action.board.CollegeSVGEntry" method="districtinfo" >
+			<result name="success">/WEB-INF/jsp/board/collegeSVGland.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		<action name="svgShow" class="edu.action.board.CollegeSVGEntry" method="svgShowCollege" >
+			<result name="success">/WEB-INF/jsp/board/ajaxSVG.jsp</result>
+			<result name="error">/WEB-INF/jsp/board/errorSVG.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+
+		
+		
+		<action name="searchThana" class="edu.action.board.CollegeSVGEntry" method="searchThana" >
+               <result type="json"></result>
+               <interceptor-ref name="defaultStack" />
+		</action>
+		
+			
+		
+		
+		<action name="saveSvg" class="edu.action.board.SaveCollegeSVG"  >
+			<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+			
+		</action>
+		
+		
+		
+		<!-- Toraf -->
+		
+		
+		<action name="searchCollegesaction" class="edu.action.board.ApplicationStatBoard" method="searchColleges" >
+               <result type="json"></result>
+               <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="releaseApplicant" class="edu.action.board.ReleaseApplicant" method="releaseApplicantAndSendSms" >
+	      	<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+		</action>
+		<action name="nonReceivedList" class="edu.action.board.Board" method="notReceivedAdmissionCollegeList" >
+			<result name="success">/WEB-INF/jsp/board/NonReceivedCollegeList.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="downloadnonReceivedListCSV"  class="edu.action.board.DownloadNonReceiveCollegeList"  method="downloadNonReceiveCollegeListCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+        
+        <action name="receivedList" class="edu.action.board.Board" method="receivedAdmissionCollegeList" >
+			<result name="success">/WEB-INF/jsp/board/ReceivedCollegeList.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="downloadReceivedListCSV"  class="edu.action.board.DownloadReceiveCollegeList"  method="downloadReceiveCollegeListCSV"  >    
+        <result type="stream">
+                <param name="contentType">application/csv</param>
+                <param name="inputName">inputStream</param>
+                <param name="bufferSize">1024</param>
+        </result>    
+        </action>
+        
+        
+        <action name="pinretrivalBoard" class="edu.action.board.Board" method="boardHome" >
+	      	<result name="success">/WEB-INF/jsp/board/PinRetrieveHome.jsp</result>
+	      	<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	    </action>
+		
+		
+		
+		
+		<action name="retrivedPinBoard" class="edu.action.board.Board" method="retrivedPin" >
+			<result name="success">/WEB-INF/jsp/board/RetrivedPin.jsp</result>
+		</action>
+		
+		
+		
+		
+		<action name="searchThanaSVG" class="edu.action.board.CollegeSVGEntry" method="searchThanaForSVG" >
+               <result type="json"></result>
+               <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="svgShowByEiin" class="edu.action.board.CollegeSVGEntry" method="showCollege" >
+			<result name="success">/WEB-INF/jsp/board/ajaxSVGHtmlView.jsp</result>
+			<result name="error">/WEB-INF/jsp/board/errorSVG.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		<action name="svgUpload" >
+			<result name="success">/WEB-INF/jsp/board/collegeSVGupload.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+
+	  <action name="ccTransRetrivalUdc" class="edu.action.interBoard.PinRetrivalByCC" method="iictTransRetrival">
+	      	<result name="success">/WEB-INF/jsp/interBoard/CCTransRetrivalUdc.jsp</result>
+	      	<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	    </action>
+
+	<action name="CCretrivedTransUdc" class="edu.action.interBoard.RetrivePinByCC" method="getTransUdc">
+			<result name="success">/WEB-INF/jsp/interBoard/CCRetrivalTransUdc.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+
+
+ 		
+ 		<action name="ccPinRetrivalUdc" class="edu.action.interBoard.PinRetrivalByCC" method="iictPinRetrival">
+	      	<result name="success">/WEB-INF/jsp/interBoard/CCPinRetrivalUdc.jsp</result>
+	      	<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	    </action>
+ 		
+ 		<action name="CCretrivedPinUdc" class="edu.action.interBoard.RetrivePinByCC" method="getPinUdc">
+			<result name="success">/WEB-INF/jsp/interBoard/CCRetrivalPinUdc.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+ 		
+		
+  		<action name="svgPdf" class="edu.action.board.Board" method="udcHome" > 
+ 			<result name="success">/WEB-INF/jsp/board/svgPdfDownload.jsp</result> 
+ 			<result name="input">/WEB-INF/jsp/util/login.jsp</result>  
+ 		</action> 
+ 		
+ 		
+  		<action name="boardSVGReport"  class="edu.reports.BoardSVG" method="svgShowCollege"> 
+ 			<result type="stream"> 
+ 					<param name="contentType">application/pdf</param> 
+ 					<param name="inputName">inputStream</param> 
+ 			</result>	 
+ 		</action> 
+		
+	
+		<action name="getCollegeList" class="edu.action.application.Application" method="getCollegesForPdf">
+     		<result type="stream">
+			<param name="contentType">json</param>
+			<param name="inputName">inputStream</param>
+		</result>
+	    </action>
+		
+		
+		<action name="svgHtml" class="edu.action.application.ApplicationSvgHtml" method="loadApplication" >
+			<result name="success">/WEB-INF/jsp/board/svgHtmlView.jsp</result>
+		</action>
+		
+		<action name="captchaReload" class="edu.action.application.ApplicationSvgHtml" method="captcha" >
+<!-- 			<result name="success">/WEB-INF/jsp/board/svgHtmlViewCaptcha.jsp</result> -->
+			<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+		</action>
+		
+		
+		<action name="appCheckNasir_TT" class="edu.action.application.ApplicationSvgHtml" method="applicationInfoCheck_TT">
+			<result name="success">/WEB-INF/jsp/board/svgHtmlViewSearchDiv.jsp</result>
+	    </action>
+		
+		
+		<action name="collegeShow" class="edu.action.board.CollegeSVGEntry" method="showCollege" >
+			<result name="success">/WEB-INF/jsp/board/ajaxSVG.jsp</result>
+			<result name="error">/WEB-INF/jsp/board/errorSVG.jsp</result>
+<!-- 			<result name="input">/WEB-INF/jsp/util/login.jsp</result> -->
+		</action>
+		
+		
+		<action name="getColleges" class="edu.action.application.Application" method="getColleges">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    <action name="getThanas" class="edu.action.application.Application" method="getThanas">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	     <action name="getCollegeSVG" class="edu.action.application.Application" method="getCollegeSVG">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+		
+		
+		<action name="uploadAction" class="edu.action.board.SVGuploadAction" >
+			<interceptor-ref name="exception" />
+			<interceptor-ref name="alias" />
+			<interceptor-ref name="servletConfig" />
+			<interceptor-ref name="prepare" />
+			<interceptor-ref name="i18n" />
+			<interceptor-ref name="chain" />
+			<interceptor-ref name="debugging" />
+			<interceptor-ref name="profiling" />
+			<interceptor-ref name="scopedModelDriven" />
+			<interceptor-ref name="modelDriven" />
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">102400</param>
+				<param name="allowedTypes">application/vnd.ms-excel</param>
+			</interceptor-ref>
+			<interceptor-ref name="checkbox" />
+			<interceptor-ref name="staticParams" />
+			<interceptor-ref name="actionMappingParams" />
+			<interceptor-ref name="params">
+				<param name="excludeParams"> dojo\..*,^struts\..*</param>
+			</interceptor-ref>
+			<interceptor-ref name="conversionError" />
+			<interceptor-ref name="validation">
+				<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			<interceptor-ref name="workflow">
+				<param name="excludeMethods"> input,back,cancel,browse</param>
+			</interceptor-ref>
+			
+			<result name="success">/WEB-INF/jsp/board/collegeSVGuploadSuccess.jsp</result>
+			<result name="input">/WEB-INF/jsp/board/collegeSVGupload.jsp</result>
+		</action>
+		
+
+		
+		<!-- End By Nasir -->
+		
+			
+<!--   -->
+		<action name="admissionCancelBoardHome" class="edu.action.board.Board" method="boardHome" >
+	      	<result name="success">/WEB-INF/jsp/board/AdmissionCancelHome.jsp</result>
+	      	<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	    </action>
+	    
+	    <action name="cancelAdmissionSearch" class="edu.action.board.Board" method="approvedStudentListOfMerit" >
+			<result name="success">/WEB-INF/jsp/board/ApprovedStudentListOfMerit.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+				
+		 <action name="cancelApproveStudentOfMeritByBoard" class="edu.action.board.Board" method="cancelApproveStudentOfMerit" >
+				<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>		 
+		  </action> 
+		  
+		<!-- <action name="admissionReReceiveBoardHome" class="edu.action.board.Board" method="boardHome" >
+	      	<result name="success">/WEB-INF/jsp/board/AdmissionReReceiveHome.jsp</result>
+	      	<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+	    </action> -->
+	    
+	    <action name="reReceiveAdmissionSearch" class="edu.action.board.Board" method="admissionCancelledStudentListOfMerit" >
+			<result name="success">/WEB-INF/jsp/board/AdmissionCancelledListOfMerit.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action> 
+		 <action name="reApproveStudentOfMeritByBoard" class="edu.action.board.Board" method="reApproveStudentOfMeritByBoard" >
+				<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>		 
+		  </action> 
+	    
+	    
+	    <action name="eiinLoad" class="edu.action.board.Registration" method="eiinLoad" >
+			<result name="success">/WEB-INF/jsp/board/registration/Registration.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		 </action>
+		 
+		 
+		 
+		 
+		<action name="getSubjectforEiin" class="edu.action.board.Registration" method="getSubjectforEiin" >
+			<result name="success">/WEB-INF/jsp/board/registration/CollegeSubject.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="deleteSubject" class="edu.action.board.Registration" method="deleteSubject" />
+		<action name="addSubject" class="edu.action.board.Registration" method="addSubject" />
+		<action name="getSubjectEiin" class="edu.action.board.Registration" method="getSubjectEiin" />
+		<action name="getOtherSubjectList" class="edu.action.board.Registration" method="getOtherSubjectList" />
+		 
+		 
+		<!-- <action name="eiinManualEntry" class="edu.action.board.ManualEntry" method="eiinLoad" >
+			<result name="success">/WEB-INF/jsp/board/manual/ManualEntry.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action> -->
+		<action name="getSVGforEiin" class="edu.action.board.ManualEntry" method="getSVGforEiin" >
+			<result name="success">/WEB-INF/jsp/board/manual/CollegeSVG.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="showStudentManual" class="edu.action.college.Admission" method="showStudent" >
+			<result name="success">/WEB-INF/jsp/board/manual/ShowStudent.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="addStudentBoard" class="edu.action.board.ManualEntry" method="addStudent" />
+		
+		<!-- <action name="eiinManualShow" class="edu.action.board.ManualEntry" method="eiinLoad" >
+			<result name="success">/WEB-INF/jsp/board/manual/ManualShow.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action> -->
+		<action name="getSVGforList" class="edu.action.board.ManualEntry" method="getSVGforEiin" >
+			<result name="success">/WEB-INF/jsp/board/manual/CollegeSVGList.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		<action name="alreadyAddedBoard" class="edu.action.board.ManualEntry" method="alreadyAdded" >
+			<result name="success">/WEB-INF/jsp/college/CollegeDataEntryCom.jsp</result>
+			<result name="input">/WEB-INF/jsp/util/login.jsp</result>
+		</action>
+		
+		
+		<!-- #####@   Admin Role   -->
+		
+		
+		
+		
+		
+		
+		<!-- #####@   Admin Role End  -->
+		
+		   
+  </package>
+</struts>
+  

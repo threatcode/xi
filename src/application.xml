@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts SYSTEM "struts-2.1.dtd">
+
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <package name="application" namespace="/application" extends="struts-securityaddon-withauth">
+  		
+  		
+  		<!-- Payment First Application-->
+    		
+	  	<action name="appDelwar_TT" class="edu.action.application.Application" method="loadApplication">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/ApplicationForm.jsp</result>
+		</action>
+		
+		<action name="appCheckDelwar_TT" class="edu.action.application.Application" method="applicationInfoCheck_TT">
+			<!-- delwar -->
+			<result name="nossc">/WEB-INF/jsp/ApplicationForm_TT/InvalidSscInfoNew.jsp</result>
+			<result name="nopayment">/WEB-INF/jsp/ApplicationForm_TT/TxInfo.jsp</result>
+			<result name="newapplication">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfo.jsp</result>	
+			<result name="np">/WEB-INF/jsp/ApplicationForm_TT/np.jsp</result>	
+			<result name="updateEditApplication">/WEB-INF/jsp/ApplicationForm_TT/updateEditAppView.jsp</result>
+			<result name="readOnlyApplication">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfoReadOnly.jsp</result>
+			<result name="onlysmsapplication">/WEB-INF/jsp/ApplicationForm_TT/updateEditOnlySMS.jsp</result>
+			
+			<!-- delwar -->
+			<!-- 
+			<result name="multitab">/WEB-INF/jsp/ApplicationForm_TT/multitab.jsp</result>	
+			
+			<result name="already_applied">/WEB-INF/jsp/ApplicationForm_TT/AlreadyApplied.jsp</result>
+			<result name="newappWithSMSNC">/WEB-INF/jsp/ApplicationForm_TT/newappWithWEB.jsp</result>
+			<result name="newappWithSMS">/WEB-INF/jsp/ApplicationForm_TT/newappWithSMS.jsp</result>
+			<result name="newappWithWEB">/WEB-INF/jsp/ApplicationForm_TT/newappWithWEB.jsp</result>
+			 -->
+			<!-- added by joy -->
+			<!-- 
+			<result name="complainwithPersonalInfo">/WEB-INF/jsp/ApplicationForm_TT/complainwithPersonalInfo.jsp</result>
+			 -->
+			<!-- end by joy -->			
+	    </action>
+	    
+		<action name="appCheckDelwar_TT_ReadOnly" class="edu.action.application.Application_New" method="applicationInfoCheck_TT">
+			<!-- delwar -->
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm_TT/InvalidSscInfoNew.jsp</result>
+			<result name="nossc">/WEB-INF/jsp/ApplicationForm_TT/InvalidSscInfoNew.jsp</result>
+			<result name="nopayment">/WEB-INF/jsp/ApplicationForm_TT/np.jsp</result>
+			<result name="p_no_application">/WEB-INF/jsp/ApplicationForm_TT/p_no_application.jsp</result>
+			<result name="readOnlyApplication">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfoReadOnly.jsp</result>
+			<result name="onlysmsapplication">/WEB-INF/jsp/ApplicationForm_TT/updateEditOnlySMS.jsp</result>
+			
+			<result name="TxInfo">/WEB-INF/jsp/ApplicationForm_TT/TxInfo.jsp</result>
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfo.jsp</result>
+			<result name="updateEditApplication">/WEB-INF/jsp/ApplicationForm_TT/updateEditAppView.jsp</result>
+			<!-- delwar -->
+		</action>
+			    
+	    <action name="checkContact" class="edu.action.application.Application" method="checkContact">
+	    	<result name="collegeinfo">/WEB-INF/jsp/ApplicationForm_TT/CollegeSelection.jsp</result>
+	    </action>
+	    
+	    <action name="showPersonalInfoDelwar_TT" class="edu.action.application.Application" method="showPersonalInfo_TT">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfoSMSOnly.jsp</result>
+	    </action>
+
+	    <action name="showPersonalInfo_SMS" class="edu.action.application.Application" method="showPersonalInfo_SMS">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfoSMSOnly.jsp</result>
+	    </action>
+	    <!--joy start -->
+	    <action name="showPersonalInfoAppUpdate" class="edu.action.application.Application" method="PersonalInfoForChooseUpdate">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/personalInfoAppUpdateEdit.jsp</result>
+	    </action>
+	    <action name="showPersonalInfoSMSOnly" class="edu.action.application.Application" method="PersonalInfoSMSOnly">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfoSMSOnly.jsp</result>
+	    </action>
+	    
+	    
+	    
+	     <action name="updateEditChoiceList" class="edu.action.application.Application" method="updateEditChoiceList">
+				<result name="success">/WEB-INF/jsp/ApplicationForm_TT/updateEditCollegeSelection.jsp</result>
+	    </action>
+	    <action name="updateSMSOnly" class="edu.action.application.Application" method="updateSMSOnly">
+				<result name="success">/WEB-INF/jsp/ApplicationForm_TT/updateSMSOnly.jsp</result>
+	    </action>
+	    <!-- joy end -->
+	    
+	    <action name="choiceListReport_TT" class="edu.action.application.Application" method="choiceListReport_TT">
+	      	<result name="success">/WEB-INF/jsp/Applicant/HtmlReport.jsp</result>
+	    </action>
+    
+    
+    
+    	
+    
+        <!--JOY-->
+		<!--active when application start-->
+		 
+	  	<action name="applicationForm_TT" class="edu.action.application.Application" method="loadApplication">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/ApplicationForm.jsp</result>
+		</action>
+		   
+		<action name="submitApplication_TT" class="edu.action.application.Application" method="submitApplication_TT">
+				<result name="atfirst">/WEB-INF/jsp/ApplicationForm_TT/ApplicationForm.jsp</result>
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	   <action name="submitApplicationEdit_TT" class="edu.action.application.Application" method="submitApplicationEdit_TT">
+	    		<result name="atfirst">/WEB-INF/jsp/ApplicationForm_TT/ApplicationForm.jsp</result>
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	    
+	    <!-- 
+	    <action name="submitApplicationEdit_TT" class="edu.action.application.Application" method="editSMSApplication_TT">
+	    		<result name="atfirst">/WEB-INF/jsp/ApplicationForm_TT/ApplicationForm.jsp</result>
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	     -->
+	    
+	    
+	    
+	    
+	     
+		<!--end application close-->
+		<!--JOY-->
+		
+		<action name="applicationInfoCheck_TT" class="edu.action.application.Application" method="applicationInfoCheck_TT">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfo.jsp</result>
+			<result name="already_applied">/WEB-INF/jsp/ApplicationForm_TT/AlreadyApplied.jsp</result>
+			<result name="onlysmsapplication">/WEB-INF/jsp/ApplicationForm_TT/OnlySMSApplication.jsp</result>
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm_TT/InvalidSscInfoNew.jsp</result>
+			<result name="nopayment">/WEB-INF/jsp/ApplicationForm_TT/TxInfo.jsp</result>			
+	    </action>
+		<action name="applicationInfoCheckTx_TT" class="edu.action.application.Application" method="applicationInfoCheckTx_TT">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfo.jsp</result>
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm_TT/InvalidSscInfoNew.jsp</result>
+			<result name="wait">/WEB-INF/jsp/ApplicationForm_TT/WaitTxIdMsg.jsp</result>
+			<result name="error">/WEB-INF/jsp/ApplicationForm_TT/ErrorTrxId.jsp</result>
+			<result name="notwait">/WEB-INF/jsp/ApplicationForm_TT/NotWaitTxIdMsg.jsp</result>
+			<result name="trxidOthers">/WEB-INF/jsp/ApplicationForm_TT/trxidOthers.jsp</result>
+	    </action>
+
+		<action name="sentSecurityCode" class="edu.action.application.Application" method="sentSecurityCode"/>
+
+	    <action name="showPersonalInfo_TT" class="edu.action.application.Application" method="showPersonalInfo_TT">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/PersonalInfoReadOnly.jsp</result>
+			<result name="complainwithPersonalInfo">/WEB-INF/jsp/ApplicationForm_TT/complainwithPersonalInfo.jsp</result>
+	    </action>
+
+	    
+	    <action name="mobile_validation_TT" class="edu.action.application.Application" method="mobile_validation_TT">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/CollegeSelection.jsp</result>
+	    </action>
+	    
+	      <action name="showQuotaInfo_TT" class="edu.action.application.Application" method="showPersonalInfo_TT">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/quotaEdit.jsp</result>
+	    </action>
+	    
+	     <action name="editQuota_TT" class="edu.action.application.Application" method="editQuota_TT">
+			<result name="success">/WEB-INF/jsp/ApplicationForm_TT/quotaEdited.jsp</result>
+	    </action>
+	    
+	    <action name="editChoiceList_TT" class="edu.action.application.Application" method="editChoiceList_TT">
+				<result name="success">/WEB-INF/jsp/ApplicationForm_TT/CollegeSelectionEdit.jsp</result>
+	    </action>
+	    
+	 
+
+ 
+ 	    
+	    <action name="applicantCopyHtmlReport_TT">
+	      	<result name="success">
+                /WEB-INF/jsp/ApplicationForm_TT/HtmlReport.jsp
+            </result>
+	    </action>
+
+
+
+
+
+  		<!-- Payment First Application-->
+  
+  
+  		<!-- Application Form actions[Start] -->
+  		
+  		<!-- 
+		<action name="applicationForm" class="edu.action.application.Application" method="loadApplication">
+			<result name="success">/WEB-INF/jsp/ApplicationForm/ApplicationForm.jsp</result>
+		</action>
+		 
+		 
+		<action name="applicationInfoCheck" class="edu.action.application.Application" method="applicationInfoCheck">
+			<result name="success">/WEB-INF/jsp/ApplicationForm/PersonalInfo.jsp</result>
+			<result name="already_applied">/WEB-INF/jsp/ApplicationForm/AlreadyApplied.jsp</result>
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm/InvalidSscInfo.jsp</result>
+	    </action>
+	    
+	    <action name="applicationInfoCheckNew" class="edu.action.application.Application" method="applicationInfoCheckNew">
+			<result name="success">/WEB-INF/jsp/ApplicationForm/PersonalInfo.jsp</result>
+			<result name="already_applied">/WEB-INF/jsp/ApplicationForm/AlreadyApplied.jsp</result>
+			<result name="invalid_info">/WEB-INF/jsp/ApplicationForm/InvalidSscInfoNew.jsp</result>
+	    </action>
+	     -->
+
+ 	    
+	    <action name="getCollegeSVG" class="edu.action.application.Application" method="getCollegeSVG">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	     
+	    <action name="getsscinfo" class="edu.action.application.Application" method="getSSCInfo">
+	      	<result name="success">
+                <param name="location">/WEB-INF/jsp/ApplicationForm/json.jsp</param>
+            </result>
+	    </action>
+	    <action name="getColleges" class="edu.action.application.Application" method="getColleges">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    <action name="getThanas" class="edu.action.application.Application" method="getThanas">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+
+
+		
+ 	    <!-- 
+	    <action name="submitApplication" class="edu.action.application.Application" method="submitApplication">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	    
+	    <action name="submitNewApplication" class="edu.action.application.Application" method="submitNewApplication">
+	      		<result type="stream">
+					<param name="contentType">json</param>
+					<param name="inputName">inputStream</param>
+				</result>
+	    </action>
+	     -->
+	    <action name="applicantCopyHtmlReport">
+	      	<result name="success">
+                /WEB-INF/jsp/ApplicationForm/HtmlReport.jsp
+            </result>
+	    </action>
+	    <action name="applicantCopyHtmlReportNew">
+	      	<result name="success">
+                /WEB-INF/jsp/ApplicationForm/HtmlReportNew.jsp
+            </result>
+	    </action>
+	    
+	    <!--JOY-->
+	     <action name="PullPayment" class="edu.action.application.Application" method="PullPayment">
+		   <result name="success">/WEB-INF/jsp/ApplicationForm_TT/PullPayment.jsp</result>
+	    </action>
+	     <!--END JOY-->
+	    
+	    <!--  Third Phase Application Start 
+	         Third Phase Application End -->
+	    
+	    <!-- Application Form actions [End] -->
+	    
+	    <!-- 
+	    <action name="newApplicationForm" class="edu.action.application.Application" method="newApplicationForm">
+			<result name="success">/WEB-INF/jsp/ApplicationForm/NewApplicationForm.jsp</result>
+		</action>
+		 -->
+  
+  </package>
+</struts>
+  
