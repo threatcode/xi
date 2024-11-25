@@ -1,0 +1,19 @@
+{
+    "java.home": "/path/to/your/jdk",   // Set to your local JDK path
+    "java.configuration.runtimes": [
+        {
+            "name": "Java 11",
+            "path": "/path/to/your/jdk-11"   // Set to your Java 11 installation path
+        },
+        {
+            "name": "Java 8",
+            "path": "/path/to/your/jdk-8"    // Set to your Java 8 installation path
+        }
+    ],
+    "tomcat.path": "/path/to/your/tomcat",  // Set to your Tomcat installation directory
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "server.host": "localhost",            // Host where Tomcat is running
+    "server.port": 8080,                   // Port for Tomcat to serve your app
+    "maven.executable.path": "/path/to/mvn" // Path to Maven if it's not in your PATH
+}
+

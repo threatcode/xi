@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Tomcat: Debug",
+            "request": "launch",
+            "hostName": "localhost",
+            "port": 8000,  // Port for Tomcat's debug mode
+            "projectName": "xi",
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "Server startup in.*seconds",
+                "uriFormat": "http://localhost:8080"
+            }
+        }
+    ]
+}
+
